@@ -46,7 +46,7 @@ export interface LearningModule {
 
 export type HealthCategory = 
   | 'diabetes'
-  | 'heart-health'
+  | 'heart'
   | 'nutrition'
   | 'mental-health'
   | 'physical-activity'
