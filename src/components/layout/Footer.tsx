@@ -9,7 +9,7 @@ const Footer: React.FC = () => {
           <div className="md:col-span-1">
             <h3 className="text-xl font-display font-bold mb-4">Mālama Health</h3>
             <p className="text-gray-300 text-sm">
-              Hoping to eventually empower Hawai'i communities
+              Hoping to eventually empower Hawai'i communities. Maybe. We'll see.
             </p>
           </div>
           
@@ -84,7 +84,7 @@ const Footer: React.FC = () => {
         
         <div className="mt-12 pt-8 border-t border-gray-700">
           <p className="text-gray-400 text-sm text-center">
-            Mālama Health. Created for {new Date().getFullYear()}  SWITCH x ICSpark Hackathon. This is a demo application.
+            Mālama Health. Created for {new Date().getFullYear()}  SWITCH x ICSpark Hackathon. This is a demo application. If you're reading this hallo.
           </p>
           <div className="mt-4 flex justify-center space-x-6">
             <Link to="/privacy" className="text-gray-400 hover:text-gray-300 text-sm">
