@@ -1,0 +1,157 @@
+{
+  "nav": {
+    "home": "Home",
+    "learn": "Aʻo",
+    "forum": "Kūkākūkā",
+    "resources": "Kumuwaiwai",
+    "about": "E pili ana iā mākou",
+    "dashboard": "Kaʻu Papa Hōʻike",
+    "login": "Komo Mai",
+    "register": "Kau Inoa",
+    "logout": "Haʻalele"
+  },
+  "auth": {
+    "email": "Leka Uila",
+    "password": "ʻŌlelo Huna",
+    "username": "Inoa Mea Hoʻohana",
+    "name": "Inoa Piha",
+    "loginTitle": "Welina Mai",
+    "loginSubtitle": "E komo i kāu moʻokāki no ke komo ʻana i kāu huakaʻi olakino",
+    "registerTitle": "E Hui Me Ko Mākou Kaiāulu",
+    "registerSubtitle": "E hana i kahi moʻokāki no ke komo ʻana i nā hiʻohiʻona a me nā kumuwaiwai āpau",
+    "noAccount": "ʻAʻohe āu moʻokāki?",
+    "haveAccount": "He moʻokāki kāu?",
+    "signUp": "Kau Inoa",
+    "signIn": "Komo Mai",
+    "forgotPassword": "Poina ʻōlelo huna?"
+  },
+  "home": {
+    "heroTitle": "Ke Kūkulu nei i Nā Kaiāulu Hawaiʻi Olakino",
+    "heroSubtitle": "E komo i ka ʻike olakino pili moʻomeheu i hana ʻia no ko mākou mau mokupuni",
+    "startJourney": "E Hoʻomaka I Kāu Huakaʻi",
+    "exploreResources": "E ʻImi i Nā Kumuwaiwai",
+    "featuredModules": "Nā Modula Aʻo Koʻikoʻi",
+    "viewAllModules": "Nānā i Nā Modula Āpau",
+    "joinCommunity": "E Hui Me Ko Mākou Kaiāulu",
+    "communityDesc": "E hoʻopili me nā poʻe ʻē aʻe, e kaʻana like i nā ʻike, a e aʻo pū"
+  },
+  "dashboard": {
+    "welcome": "Welina",
+    "progressTitle": "Kou Holomua Aʻo",
+    "modulesCompleted": "Nā Modula Hoʻokō",
+    "quizzesTaken": "Nā Hōʻike i Lawe ʻIa",
+    "averageScore": "Helu Waena",
+    "notifications": "Nā Hōʻike",
+    "markAllRead": "Kaha I Nā Mea Āpau He Heluhelu",
+    "continueTitle": "E Hoʻomau I Ka Aʻo ʻAna",
+    "viewAllModules": "Nānā i Nā Modula Āpau",
+    "recentActivity": "Hana Hou Nei",
+    "viewAll": "Nānā I Nā Mea Āpau"
+  },
+  "learn": {
+    "allCategories": "Nā Papa Kūmole Āpau",
+    "filterBy": "Kānana ma",
+    "categories": {
+      "diabetes": "Maʻi Kōpī Piha",
+      "heart": "Olakino Puʻuwai",
+      "nutrition": "Meaʻai",
+      "mental-health": "Olakino Naʻau",
+      "physical-activity": "Hana Kino",
+      "traditional-medicine": "Lāʻau Lapaʻau",
+      "preventative-care": "Mālama Pale"
+    },
+    "difficulty": {
+      "all": "Nā Pae Āpau",
+      "beginner": "Mea Hoʻomaka",
+      "intermediate": "Waena",
+      "advanced": "Loa"
+    },
+    "moduleCard": {
+      "estimatedTime": "Manawa manaʻo",
+      "minutes": "minuke",
+      "lessons": "Nā Haʻawina",
+      "quizzes": "Nā Hōʻike",
+      "start": "Hoʻomaka",
+      "continue": "Hoʻomau",
+      "completed": "Hoʻokō"
+    }
+  },
+  "lesson": {
+    "previous": "Haʻawina Mua",
+    "next": "Haʻawina Aʻe",
+    "startQuiz": "Hoʻomaka Hōʻike",
+    "complete": "Hoʻopau i ka Modula"
+  },
+  "quiz": {
+    "title": "Hōʻike",
+    "selectAnswer": "Koho i kahi pane e hoʻomau",
+    "previous": "Mua",
+    "next": "Aʻe",
+    "submit": "Waiho i ka Hōʻike",
+    "results": "Nā Hopena Hōʻike",
+    "correct": "Pololei",
+    "incorrect": "Hewa",
+    "score": "Kou Helu",
+    "outOf": "mai",
+    "questions": "nā nīnau",
+    "retake": "Hoʻohou i ka Hōʻike",
+    "finish": "Hoʻopau",
+    "explanation": "Wehewehe"
+  },
+  "forum": {
+    "discussionBoard": "Papa Kūkākūkā",
+    "createPost": "Hana Poʻo",
+    "search": "Huli kūkākūkā...",
+    "latestPosts": "Nā Poʻo Hou",
+    "popularTopics": "Nā Kumuhana Kaulana",
+    "recentComments": "Nā Manaʻo Hou",
+    "viewMore": "Nānā Hou",
+    "sortBy": "Hoʻonohonoho ma",
+    "category": "Papa Kūmole",
+    "author": "Kākau ʻia e",
+    "comments": "Nā Manaʻo",
+    "likes": "Nā Makemake",
+    "views": "Nā Nānā",
+    "comment": "Manaʻo",
+    "postComment": "Waiho Manaʻo",
+    "addComment": "Hoʻohui i Manaʻo",
+    "writeComment": "Kākau i kāu manaʻo...",
+    "writePost": "Kākau i kāu poʻo...",
+    "postTitle": "Inoa Poʻo",
+    "selectCategory": "Koho Papa Kūmole",
+    "submitPost": "Waiho Poʻo",
+    "cancel": "Hoʻopau"
+  },
+  "resources": {
+    "resourceDirectory": "Papa Kumuwaiwai",
+    "search": "Huli kumuwaiwai...",
+    "allCategories": "Nā Papa Kūmole Āpau",
+    "filterBy": "Kānana ma",
+    "contact": "Hoʻokuʻi",
+    "website": "Pūnaewele",
+    "address": "Helu Wahi",
+    "phone": "Kelepona"
+  },
+  "about": {
+    "title": "E pili ana iā Mālama Health",
+    "mission": "Ka Mikiona",
+    "missionText": "Ua kūpaʻa ʻo Mālama Health i ka hoʻomaikaʻi ʻana i ka naʻauao olakino a me ke komo ʻana i ka ʻike olakino pili moʻomeheu no nā Kānaka Maoli, nā Kānaka Mokupuni Pākīpika, a me nā kamaʻāina āpau o Hawaiʻi.",
+    "ourTeam": "Ko Mākou Hui",
+    "teamMember": {
+      "role": "Kuleana"
+    },
+    "connect": "E Hoʻopili Me Mākou",
+    "email": "Leka Uila",
+    "phone": "Kelepona"
+  },
+  "common": {
+    "loading": "Ke hoʻouka nei...",
+    "error": "Ua loaʻa kahi pilikia",
+    "tryAgain": "E Hoʻāʻo Hou",
+    "notFound": "ʻAʻole Loaʻa Ka ʻAoʻao",
+    "backHome": "Hoʻi i ka Home",
+    "language": "ʻŌlelo",
+    "english": "ʻŌlelo Pelekānia",
+    "hawaiian": "ʻŌlelo Hawaiʻi"
+  }
+}

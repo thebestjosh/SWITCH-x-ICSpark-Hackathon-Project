@@ -1,10 +1,13 @@
 import React, { useState } from 'react';
 import { Link, useLocation } from 'react-router-dom';
 import { useAuth } from '../../context/AuthContext';
+import { useTranslation } from '../../i18n/TranslationContext';
 import { motion } from 'framer-motion';
+import LanguageSelector from '../ui/LanguageSelector';
 
 const Navbar: React.FC = () => {
   const { user, logout, isAuthenticated } = useAuth();
+  const { t } = useTranslation();
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const location = useLocation();
 
@@ -39,7 +42,7 @@ const Navbar: React.FC = () => {
               }`}
               onClick={closeMenu}
             >
-              Learn
+              {t('nav.learn')}
             </Link>
             <Link 
               to="/forum" 
@@ -48,7 +51,7 @@ const Navbar: React.FC = () => {
               }`}
               onClick={closeMenu}
             >
-              Forum
+              {t('nav.forum')}
             </Link>
             <Link 
               to="/resources" 
@@ -57,7 +60,7 @@ const Navbar: React.FC = () => {
               }`}
               onClick={closeMenu}
             >
-              Resources
+              {t('nav.resources')}
             </Link>
             <Link 
               to="/about" 
@@ -66,7 +69,7 @@ const Navbar: React.FC = () => {
               }`}
               onClick={closeMenu}
             >
-              About Us
+              {t('nav.about')}
             </Link>
             
             {isAuthenticated ? (
@@ -76,13 +79,13 @@ const Navbar: React.FC = () => {
                   className="px-3 py-2 rounded-md text-sm font-medium text-gray-700 hover:bg-gray-100 transition-colors"
                   onClick={closeMenu}
                 >
-                  My Dashboard
+                  {t('nav.dashboard')}
                 </Link>
                 <button 
                   onClick={logout} 
                   className="ml-4 px-3 py-2 rounded-md text-sm font-medium text-white bg-secondary hover:bg-secondary-dark transition-colors"
                 >
-                  Logout
+                  {t('nav.logout')}
                 </button>
               </div>
             ) : (
@@ -92,17 +95,20 @@ const Navbar: React.FC = () => {
                   className="px-3 py-2 rounded-md text-sm font-medium text-gray-700 hover:bg-gray-100 transition-colors"
                   onClick={closeMenu}
                 >
-                  Login
+                  {t('nav.login')}
                 </Link>
                 <Link 
                   to="/register" 
                   className="ml-4 px-3 py-2 rounded-md text-sm font-medium text-white bg-secondary hover:bg-secondary-dark transition-colors"
                   onClick={closeMenu}
                 >
-                  Sign Up
+                  {t('nav.register')}
                 </Link>
               </div>
             )}
+            
+            {/* Language Selector */}
+            <LanguageSelector className="ml-4" />
           </div>
           
           {/* Mobile menu button */}
@@ -157,7 +163,7 @@ const Navbar: React.FC = () => {
               }`}
               onClick={closeMenu}
             >
-              Learn
+              {t('nav.learn')}
             </Link>
             <Link 
               to="/forum" 
@@ -166,7 +172,7 @@ const Navbar: React.FC = () => {
               }`}
               onClick={closeMenu}
             >
-              Forum
+              {t('nav.forum')}
             </Link>
             <Link 
               to="/resources" 
@@ -175,7 +181,7 @@ const Navbar: React.FC = () => {
               }`}
               onClick={closeMenu}
             >
-              Resources
+              {t('nav.resources')}
             </Link>
             <Link 
               to="/about" 
@@ -184,7 +190,7 @@ const Navbar: React.FC = () => {
               }`}
               onClick={closeMenu}
             >
-              About Us
+              {t('nav.about')}
             </Link>
             
             {isAuthenticated ? (
@@ -194,7 +200,7 @@ const Navbar: React.FC = () => {
                   className="block px-3 py-2 rounded-md text-base font-medium text-gray-700 hover:bg-gray-100"
                   onClick={closeMenu}
                 >
-                  My Dashboard
+                  {t('nav.dashboard')}
                 </Link>
                 <button 
                   onClick={() => {
@@ -203,7 +209,7 @@ const Navbar: React.FC = () => {
                   }} 
                   className="block w-full text-left px-3 py-2 rounded-md text-base font-medium text-gray-700 hover:bg-gray-100"
                 >
-                  Logout
+                  {t('nav.logout')}
                 </button>
               </>
             ) : (
@@ -213,17 +219,23 @@ const Navbar: React.FC = () => {
                   className="block px-3 py-2 rounded-md text-base font-medium text-gray-700 hover:bg-gray-100"
                   onClick={closeMenu}
                 >
-                  Login
+                  {t('nav.login')}
                 </Link>
                 <Link 
                   to="/register" 
                   className="block px-3 py-2 rounded-md text-base font-medium text-gray-700 hover:bg-gray-100"
                   onClick={closeMenu}
                 >
-                  Sign Up
+                  {t('nav.register')}
                 </Link>
               </>
             )}
+            
+            {/* Mobile Language Selector */}
+            <div className="mt-4 pt-4 border-t border-gray-200">
+              <div className="px-3 py-2 text-sm font-medium text-gray-700">{t('common.language')}</div>
+              <LanguageSelector className="px-3 py-2" />
+            </div>
           </div>
         </motion.div>
       )}

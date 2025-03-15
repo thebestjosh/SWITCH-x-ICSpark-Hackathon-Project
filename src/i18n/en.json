@@ -1,0 +1,157 @@
+{
+  "nav": {
+    "home": "Home",
+    "learn": "Learn",
+    "forum": "Forum",
+    "resources": "Resources",
+    "about": "About Us",
+    "dashboard": "My Dashboard",
+    "login": "Login",
+    "register": "Sign Up",
+    "logout": "Logout"
+  },
+  "auth": {
+    "email": "Email",
+    "password": "Password",
+    "username": "Username",
+    "name": "Full Name",
+    "loginTitle": "Welcome Back",
+    "loginSubtitle": "Sign in to your account to continue your health journey",
+    "registerTitle": "Join Our Community",
+    "registerSubtitle": "Create an account to access all features and resources",
+    "noAccount": "Don't have an account?",
+    "haveAccount": "Already have an account?",
+    "signUp": "Sign Up",
+    "signIn": "Sign In",
+    "forgotPassword": "Forgot password?"
+  },
+  "home": {
+    "heroTitle": "Building Healthier Hawaiian Communities",
+    "heroSubtitle": "Access culturally relevant health information designed for our islands",
+    "startJourney": "Start Your Journey",
+    "exploreResources": "Explore Resources",
+    "featuredModules": "Featured Learning Modules",
+    "viewAllModules": "View All Modules",
+    "joinCommunity": "Join Our Community",
+    "communityDesc": "Connect with others, share experiences, and learn together"
+  },
+  "dashboard": {
+    "welcome": "Welcome",
+    "progressTitle": "Your Learning Progress",
+    "modulesCompleted": "Modules Completed",
+    "quizzesTaken": "Quizzes Taken",
+    "averageScore": "Average Score",
+    "notifications": "Notifications",
+    "markAllRead": "Mark All Read",
+    "continueTitle": "Continue Learning",
+    "viewAllModules": "View All Modules",
+    "recentActivity": "Recent Activity",
+    "viewAll": "View All"
+  },
+  "learn": {
+    "allCategories": "All Categories",
+    "filterBy": "Filter by",
+    "categories": {
+      "diabetes": "Diabetes",
+      "heart": "Heart Health",
+      "nutrition": "Nutrition",
+      "mental-health": "Mental Health",
+      "physical-activity": "Physical Activity",
+      "traditional-medicine": "Traditional Medicine",
+      "preventative-care": "Preventative Care"
+    },
+    "difficulty": {
+      "all": "All Levels",
+      "beginner": "Beginner",
+      "intermediate": "Intermediate",
+      "advanced": "Advanced"
+    },
+    "moduleCard": {
+      "estimatedTime": "Estimated time",
+      "minutes": "minutes",
+      "lessons": "Lessons",
+      "quizzes": "Quizzes",
+      "start": "Start",
+      "continue": "Continue",
+      "completed": "Completed"
+    }
+  },
+  "lesson": {
+    "previous": "Previous Lesson",
+    "next": "Next Lesson",
+    "startQuiz": "Start Quiz",
+    "complete": "Complete Module"
+  },
+  "quiz": {
+    "title": "Quiz",
+    "selectAnswer": "Select an answer to continue",
+    "previous": "Previous",
+    "next": "Next",
+    "submit": "Submit Quiz",
+    "results": "Quiz Results",
+    "correct": "Correct",
+    "incorrect": "Incorrect",
+    "score": "Your Score",
+    "outOf": "out of",
+    "questions": "questions",
+    "retake": "Retake Quiz",
+    "finish": "Complete",
+    "explanation": "Explanation"
+  },
+  "forum": {
+    "discussionBoard": "Discussion Board",
+    "createPost": "Create Post",
+    "search": "Search discussions...",
+    "latestPosts": "Latest Posts",
+    "popularTopics": "Popular Topics",
+    "recentComments": "Recent Comments",
+    "viewMore": "View More",
+    "sortBy": "Sort by",
+    "category": "Category",
+    "author": "Posted by",
+    "comments": "Comments",
+    "likes": "Likes",
+    "views": "Views",
+    "comment": "Comment",
+    "postComment": "Post Comment",
+    "addComment": "Add a Comment",
+    "writeComment": "Write your comment...",
+    "writePost": "Write your post...",
+    "postTitle": "Post Title",
+    "selectCategory": "Select Category",
+    "submitPost": "Submit Post",
+    "cancel": "Cancel"
+  },
+  "resources": {
+    "resourceDirectory": "Resource Directory",
+    "search": "Search resources...",
+    "allCategories": "All Categories",
+    "filterBy": "Filter by",
+    "contact": "Contact",
+    "website": "Website",
+    "address": "Address",
+    "phone": "Phone"
+  },
+  "about": {
+    "title": "About Mālama Health",
+    "mission": "Our Mission",
+    "missionText": "Mālama Health is dedicated to improving health literacy and access to culturally relevant health information for Native Hawaiians, Pacific Islanders, and all residents of Hawaiʻi.",
+    "ourTeam": "Our Team",
+    "teamMember": {
+      "role": "Role"
+    },
+    "connect": "Connect With Us",
+    "email": "Email",
+    "phone": "Phone"
+  },
+  "common": {
+    "loading": "Loading...",
+    "error": "Something went wrong",
+    "tryAgain": "Try Again",
+    "notFound": "Page Not Found",
+    "backHome": "Back to Home",
+    "language": "Language",
+    "english": "English",
+    "hawaiian": "Hawaiian (ʻŌlelo Hawaiʻi)"
+  }
+}

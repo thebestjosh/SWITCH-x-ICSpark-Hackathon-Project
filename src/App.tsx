@@ -2,8 +2,9 @@ import React from 'react';
 import { BrowserRouter as Router, Routes, Route, Navigate } from 'react-router-dom';
 import { AuthProvider } from './context/AuthContext';
 import { DataProvider } from './context/DataContext';
+import { TranslationProvider } from './i18n/TranslationContext';
 import Layout from './components/layout/Layout';
-import ErrorBoundary from './components/ui/ErrorBoundary';
+import ErrorBoundary from './components/ErrorBoundary';
 
 // Pages
 import HomePage from './pages/HomePage';
@@ -32,9 +33,10 @@ const App: React.FC = () => {
       <Router>
         <AuthProvider>
           <DataProvider>
-            <Layout>
-              <React.Suspense fallback={<div className="flex justify-center items-center h-96">Loading...</div>}>
-                <Routes>
+            <TranslationProvider>
+              <Layout>
+                <React.Suspense fallback={<div className="flex justify-center items-center h-96">Loading...</div>}>
+                  <Routes>
                   <Route path="/" element={<HomePage />} />
                   <Route path="/login" element={<LoginPage />} />
                   <Route path="/register" element={<RegisterPage />} />
@@ -68,10 +70,11 @@ const App: React.FC = () => {
                 <Route path="*" element={<Navigate to="/404" replace />} />
               </Routes>
             </React.Suspense>
-          </Layout>
-        </DataProvider>
-      </AuthProvider>
-    </Router>
+              </Layout>
+            </TranslationProvider>
+          </DataProvider>
+        </AuthProvider>
+      </Router>
     </ErrorBoundary>
   );
 };

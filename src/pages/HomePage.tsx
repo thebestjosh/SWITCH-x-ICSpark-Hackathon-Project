@@ -1,5 +1,6 @@
 import React from 'react';
 import { useAuth } from '../context/AuthContext';
+import { useTranslation } from '../i18n/TranslationContext';
 import { Link } from 'react-router-dom';
 import { motion } from 'framer-motion';
 import Button from '../components/ui/Button';
@@ -7,6 +8,7 @@ import Card from '../components/ui/Card';
 
 const HomePage: React.FC = () => {
   const { isAuthenticated } = useAuth();
+  const { t } = useTranslation();
   const fadeIn = {
     hidden: { opacity: 0, y: 20 },
     visible: { 
@@ -76,19 +78,19 @@ const HomePage: React.FC = () => {
         >
           <div className="text-center">
             <h1 className="text-4xl md:text-5xl font-display font-bold mb-6">
-              Mālama Your Health Journey
+              {t('home.heroTitle')}
             </h1>
             <p className="text-xl md:text-2xl mb-10 max-w-3xl mx-auto">
-              Culturally relevant health education and tools for Hawaiʻi's communities
+              {t('home.heroSubtitle')}
             </p>
             <div className="flex flex-col sm:flex-row justify-center space-y-4 sm:space-y-0 sm:space-x-4">
               <Link to="/learn">
-                <Button size="lg">Start Learning</Button>
+                <Button size="lg">{t('home.startJourney')}</Button>
               </Link>
               {!isAuthenticated && (
                 <Link to="/register">
                   <Button variant="outline" size="lg" className="bg-white text-primary border-white">
-                    Create Account
+                    {t('auth.signUp')}
                   </Button>
                 </Link>
               )}
