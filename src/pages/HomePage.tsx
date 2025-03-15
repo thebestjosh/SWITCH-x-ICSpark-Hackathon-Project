@@ -21,7 +21,7 @@ const HomePage: React.FC = () => {
   const features = [
     {
       title: 'Tailored Health Education',
-      description: 'Learn more about relevant health education tailored for Hawai`i. ',
+      description: 'Learn more about relevant health education tailored for Hawai`i residents. Learn more',
       icon: '🏝️',
       link: '/learn'
     },
