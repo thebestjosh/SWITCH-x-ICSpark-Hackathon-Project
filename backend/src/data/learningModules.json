@@ -5,12 +5,12 @@
     "description": "Learn about the basics of diabetes, symptoms, treatment options, and how to effectively manage it with traditional and modern approaches.",
     "category": "diabetes",
     "difficulty": "beginner",
-    "estimatedMinutes": 30,
+    "estimatedMinutes": 4,
     "lessons": [
       {
         "id": "lesson1-1",
         "title": "What is Diabetes?",
-        "content": "Diabetes is a chronic health condition that affects how your body turns food into energy. Your body breaks down most of the food you eat into sugar (glucose) and releases it into your bloodstream. When your blood sugar goes up, it signals your pancreas to release insulin.\n\nInsulin acts like a key to let the blood sugar into your body's cells for use as energy.\n\nThere are several types of diabetes:\n\n1. **Type 1 Diabetes**: Your body doesn't make insulin or makes very little insulin. People with type 1 diabetes need to take insulin every day to survive.\n\n2. **Type 2 Diabetes**: Your body doesn't use insulin well and can't keep blood sugar at normal levels. This is the most common type of diabetes.\n\n3. **Gestational Diabetes**: This develops in pregnant women who have never had diabetes. It usually goes away after the baby is born, but increases the risk for type 2 diabetes later in life.\n\nIn Hawaii, diabetes is a significant health concern, with higher rates among Native Hawaiians and Pacific Islanders compared to other ethnic groups."
+        "content": "Diabetes is a chronic health condition that affects how your body turns food into energy. Your body breaks down most of the food you eat into sugar (glucose) and releases it into your bloodstream. When your blood sugar goes up, it signals your pancreas to release insulin.\n\nInsulin acts like a key to let the blood sugar into your body's cells for use as energy.\n\nThere are several types of diabetes:\n\n1. **Type 1 Diabetes**: Your body doesn't make insulin or makes very little insulin. People with type 1 diabetes need to take insulin every day to survive.\n\n2. **Type 2 Diabetes**: Your body doesn't use insulin well and can't keep blood sugar at normal levels. This is the most common type of diabetes.\n\n3. **Gestational Diabetes**: This develops in pregnant women who have never had diabetes. It usually goes away after the baby is born, but increases the risk for type 2 diabetes later in life.\n\nIn Hawaii, diabetes is a significant health concern, with higher rates among Native Hawaiians and Pacific Islanders compared to other ethnic groups.\n\n[Watch this video to learn more about diabetes](https://www.youtube.com/watch?v=2TWelC6SHr8)."
       },
       {
         "id": "lesson1-2",
@@ -21,38 +21,85 @@
     "quizzes": [
       {
         "id": "quiz1",
-        "title": "Diabetes Basics Quiz",
-        "description": "Test your knowledge about the basics of diabetes",
+        "title": "Understanding Diabetes",
+        "description": "Test your knowledge about diabetes management and care",
         "questions": [
           {
-            "id": "q1-1",
-            "questionText": "What hormone does the body use to regulate blood sugar?",
+            "id": "q1",
+            "questionText": "What is the main hormone that regulates blood sugar levels?",
             "options": [
               {
-                "id": "q1-1-a",
-                "text": "Insulin"
-              },
-              {
-                "id": "q1-1-b",
+                "id": "a",
                 "text": "Estrogen"
               },
               {
-                "id": "q1-1-c",
+                "id": "b",
+                "text": "Insulin"
+              },
+              {
+                "id": "c",
                 "text": "Testosterone"
               },
               {
-                "id": "q1-1-d",
+                "id": "d",
                 "text": "Adrenaline"
               }
             ],
-            "correctOptionId": "q1-1-a",
-            "explanation": "Insulin is the hormone that regulates blood sugar by allowing glucose to enter cells for energy."
+            "correctOptionId": "b",
+            "explanation": "Insulin is the hormone produced by the pancreas that regulates blood sugar by helping glucose enter your body's cells."
+          },
+          {
+            "id": "q2",
+            "questionText": "Which of these is NOT a common symptom of diabetes?",
+            "options": [
+              {
+                "id": "a",
+                "text": "Increased thirst"
+              },
+              {
+                "id": "b",
+                "text": "Frequent urination"
+              },
+              {
+                "id": "c",
+                "text": "Weight gain"
+              },
+              {
+                "id": "d",
+                "text": "Blurred vision"
+              }
+            ],
+            "correctOptionId": "c",
+            "explanation": "Weight loss, not weight gain, is often a symptom of uncontrolled diabetes because the body cannot use glucose properly as an energy source."
+          },
+          {
+            "id": "q3",
+            "questionText": "Which traditional Hawaiian food is a good choice for people with diabetes?",
+            "options": [
+              {
+                "id": "a",
+                "text": "Poi (fermented taro)"
+              },
+              {
+                "id": "b",
+                "text": "Haupia (coconut pudding)"
+              },
+              {
+                "id": "c",
+                "text": "Kalua pig with rice"
+              },
+              {
+                "id": "d",
+                "text": "Malasadas (Portuguese donuts)"
+              }
+            ],
+            "correctOptionId": "a",
+            "explanation": "Poi made from taro has a lower glycemic index compared to white rice or bread, making it a better choice for blood sugar management."
           }
         ]
       }
     ],
     "completedBy": [
-      "1",
       "17b4887c-a158-46e9-9b73-c3a7ae8d4eff"
     ]
   },
@@ -62,7 +109,7 @@
     "description": "Explore heart health from both traditional and modern perspectives, with culturally relevant approaches to keeping your heart strong.",
     "category": "heart",
     "difficulty": "beginner",
-    "estimatedMinutes": 25,
+    "estimatedMinutes": 5,
     "lessons": [
       {
         "id": "lesson2-1",
@@ -70,7 +117,87 @@
         "content": "Your heart is a vital organ that pumps blood throughout your body, delivering oxygen and nutrients to every cell. Keeping your heart healthy is essential for overall wellbeing and longevity.\n\nHeart disease is one of the leading causes of death in Hawaii, particularly affecting Native Hawaiians and Pacific Islanders at higher rates than other populations. Understanding heart health is therefore especially important for our communities.\n\nCommon heart conditions include:\n\n1. **Coronary Artery Disease**: Narrowing of the blood vessels that supply the heart muscle with blood and oxygen\n\n2. **Heart Failure**: When the heart can't pump blood as well as it should\n\n3. **Arrhythmias**: Irregular heartbeats\n\n4. **Heart Valve Disease**: When heart valves don't work properly\n\nMany factors that increase risk for heart disease can be managed through lifestyle changes and medical care."
       }
     ],
-    "quizzes": [],
+    "quizzes": [
+      {
+        "id": "quiz2",
+        "title": "Heart Health Basics",
+        "description": "Test your knowledge about heart health and cardiovascular disease prevention",
+        "questions": [
+          {
+            "id": "q1",
+            "questionText": "Which of these is a major risk factor for heart disease?",
+            "options": [
+              {
+                "id": "a",
+                "text": "High blood pressure"
+              },
+              {
+                "id": "b",
+                "text": "Low cholesterol"
+              },
+              {
+                "id": "c",
+                "text": "Drinking plenty of water"
+              },
+              {
+                "id": "d",
+                "text": "Eating fresh fruits"
+              }
+            ],
+            "correctOptionId": "a",
+            "explanation": "High blood pressure is a major risk factor for heart disease as it damages the arteries over time."
+          },
+          {
+            "id": "q2",
+            "questionText": "Which of these activities is best for heart health?",
+            "options": [
+              {
+                "id": "a",
+                "text": "Watching TV"
+              },
+              {
+                "id": "b",
+                "text": "Playing video games"
+              },
+              {
+                "id": "c",
+                "text": "Regular walking or swimming"
+              },
+              {
+                "id": "d",
+                "text": "Occasional stretching"
+              }
+            ],
+            "correctOptionId": "c",
+            "explanation": "Regular aerobic exercise like walking, swimming, or dancing strengthens the heart and improves circulation."
+          },
+          {
+            "id": "q3",
+            "questionText": "Which traditional Hawaiian activity is excellent for heart health?",
+            "options": [
+              {
+                "id": "a",
+                "text": "Hula dancing"
+              },
+              {
+                "id": "b",
+                "text": "Lei making"
+              },
+              {
+                "id": "c",
+                "text": "Storytelling"
+              },
+              {
+                "id": "d",
+                "text": "Playing ukulele"
+              }
+            ],
+            "correctOptionId": "a",
+            "explanation": "Hula dancing is an excellent aerobic exercise that increases heart rate, improves circulation, and builds endurance."
+          }
+        ]
+      }
+    ],
     "completedBy": []
   }
 ]

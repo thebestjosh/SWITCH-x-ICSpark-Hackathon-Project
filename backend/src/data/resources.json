@@ -1,24 +1,30 @@
 [
   {
-    "id": "15fde4e3-56cd-4ca6-a6ad-7f8f1ae514e6",
-    "title": "Health Resource Placeholder 1",
-    "description": "This is a placeholder for health resources that would be available in the application.",
+    "id": "waianae-coast-health",
+    "title": "Waianae Coast Comprehensive Health Center",
+    "description": "Provides comprehensive medical, dental, and mental health services to the communities along Oahu's Waianae Coast.",
     "category": "general",
-    "tags": [
-      "health",
-      "resources",
-      "placeholder"
-    ]
+    "tags": ["medical", "dental", "mental health"]
   },
   {
-    "id": "a066056f-66c6-45e1-9d87-173041d896d5",
-    "title": "Health Resource Placeholder 2",
-    "description": "Another placeholder for health resources that would be available in the application.",
+    "id": "aloha-united-way",
+    "title": "Aloha United Way",
+    "description": "A free, confidential service that connects individuals to health and human services in Hawaii.",
     "category": "general",
-    "tags": [
-      "health",
-      "resources",
-      "placeholder"
-    ]
+    "tags": ["non-profit", "community", "assistance"]
+  },
+  {
+    "id": "hawaii-health-dept",
+    "title": "Hawaii State Department of Health",
+    "description": "Provides comprehensive public health services, including disease prevention and health promotion.",
+    "category": "general",
+    "tags": ["public health", "government", "disease prevention"]
+  },
+  {
+    "id": "mental-health-resource-1",
+    "title": "Mental Health Hawaii",
+    "description": "Provides mental health services for individuals and families.",
+    "category": "mental-health",
+    "tags": ["mental health", "therapy", "support"]
   }
 ]
