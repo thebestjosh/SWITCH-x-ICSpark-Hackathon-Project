@@ -20,20 +20,20 @@ const HomePage: React.FC = () => {
   
   const features = [
     {
-      title: 'Culturally Tailored Health Education',
-      description: 'Learn about health topics with content that respects and incorporates cultural traditions and practices from Hawaiʻi.',
+      title: 'Tailored Health Education',
+      description: 'Learn more about relevant health education tailored for Hawai`i. ',
       icon: '🏝️',
       link: '/learn'
     },
     {
       title: 'Interactive Learning Modules',
-      description: 'Engage with easy-to-understand modules on diabetes, heart health, nutrition, and more.',
-      icon: '📚',
+      description: 'Engage with easy-to-understand modules on diabetes, heart health, and nutrition.',
+      icon: '🧐',
       link: '/learn'
     },
     {
       title: 'Community Forum',
-      description: 'Connect with others on their health journey. Share experiences and get support from your community.',
+      description: 'Connect with others. Share experiences, get support from your community.',
       icon: '👥',
       link: '/forum'
     },
@@ -45,7 +45,7 @@ const HomePage: React.FC = () => {
     },
     {
       title: 'Educational Resources',
-      description: 'Access rich, culturally-relevant educational content about various health topics and conditions.',
+      description: 'Access educational content about various health topics and conditions.',
       icon: '📚',
       link: '/learn'
     },
