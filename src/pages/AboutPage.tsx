@@ -7,17 +7,17 @@ const AboutPage: React.FC = () => {
     {
       name: 'Josh Zhang',
       role: 'Coder',
-      bio: 'Sigma coder'
+      bio: 'Sigma coder who made the entire frontend'
     },
     {
       name: 'Kai Stewart',
       role: 'Coder',
-      bio: 'Focused on making an engaging frontend and functional backend'
+      bio: 'made functional backend (carried frfr)'
     },
     {
       name: 'Julian Williams',
       role: 'Coder',
-      bio: 'Rizzler'
+      bio: 'Rizzler who also made the front end'
     }
   ];
 
