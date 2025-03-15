@@ -158,7 +158,7 @@ const HomePage: React.FC = () => {
           >
             <h2 className="text-3xl font-display font-bold mb-6">Ready to start your health journey?</h2>
             <p className="text-xl mb-8 max-w-3xl mx-auto">
-              Join our community today and access culturally relevant health resources designed for Hawaii's diverse communities.
+              Join our community today and access relevant health resources designed for Hawai`i.
             </p>
             <div className="flex justify-center">
               {!isAuthenticated && (
