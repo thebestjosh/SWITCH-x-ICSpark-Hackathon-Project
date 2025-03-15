@@ -68,7 +68,7 @@ const TermsPage: React.FC = () => {
               If you have any questions about these Terms, please contact us at:
             </p>
             <p className="mb-6">
-              <a href="mailto:info@malamahealth.org" className="text-primary hover:underline">info@malamahealth.org</a>
+              <a href="mailto:jzhang27@punahou.edu" className="text-primary hover:underline">jzhang27@punahou.edu</a>
             </p>
           </div>
         </motion.div>
