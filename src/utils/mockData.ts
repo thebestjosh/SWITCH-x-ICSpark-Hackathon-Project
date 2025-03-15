@@ -162,7 +162,7 @@ const diabetesModule: LearningModule = {
   description: 'Learn about diabetes prevention and management with a focus on traditional Hawaiian approaches to health and nutrition.',
   category: 'diabetes',
   difficulty: 'beginner',
-  estimatedMinutes: 45,
+  estimatedMinutes: 4,
   lessons: diabetesLessons,
   quizzes: [diabetesQuiz],
   completedBy: []
@@ -340,7 +340,7 @@ const heartHealthModule: LearningModule = {
   description: 'Learn about heart disease prevention and management with a focus on traditional and cultural approaches to cardiovascular health.',
   category: 'heart',
   difficulty: 'beginner',
-  estimatedMinutes: 40,
+  estimatedMinutes: 6,
   lessons: heartHealthLessons,
   quizzes: [heartHealthQuiz],
   completedBy: []
@@ -545,7 +545,7 @@ const nutritionModule: LearningModule = {
   description: 'Learn about balanced nutrition with an emphasis on traditional Hawaiian foods and their health benefits.',
   category: 'nutrition',
   difficulty: 'beginner',
-  estimatedMinutes: 35,
+  estimatedMinutes: 5,
   lessons: nutritionLessons,
   quizzes: [nutritionQuiz],
   completedBy: []
