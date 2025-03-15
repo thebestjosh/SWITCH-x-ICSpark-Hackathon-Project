@@ -138,11 +138,6 @@ const LessonPage: React.FC = () => {
               <div className="mt-6 space-y-4">
                 {lesson.imageUrls.map((imageUrl, index) => (
                   <div key={index} className="flex justify-center">
-                    <img 
-                      src={`${process.env.PUBLIC_URL}/placeholder-image.jpg`} 
-                      alt={`Illustration for ${lesson.title}`}
-                      className="max-w-full rounded-lg shadow-md"
-                    />
                   </div>
                 ))}
               </div>
