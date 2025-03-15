@@ -1,0 +1,73 @@
+[
+  {
+    "id": "module1",
+    "title": "Understanding Diabetes Management",
+    "description": "Learn about the basics of diabetes, symptoms, treatment options, and how to effectively manage it with traditional and modern approaches.",
+    "category": "diabetes",
+    "difficulty": "beginner",
+    "estimatedMinutes": 30,
+    "lessons": [
+      {
+        "id": "lesson1-1",
+        "title": "What is Diabetes?",
+        "content": "Diabetes is a chronic health condition that affects how your body turns food into energy. Your body breaks down most of the food you eat into sugar (glucose) and releases it into your bloodstream. When your blood sugar goes up, it signals your pancreas to release insulin. Insulin acts like a key to let the blood sugar into your body's cells for use as energy.\n\nThere are several types of diabetes:\n\n1. **Type 1 Diabetes**: Your body doesn't make insulin or makes very little insulin. People with type 1 diabetes need to take insulin every day to survive.\n\n2. **Type 2 Diabetes**: Your body doesn't use insulin well and can't keep blood sugar at normal levels. This is the most common type of diabetes.\n\n3. **Gestational Diabetes**: This develops in pregnant women who have never had diabetes. It usually goes away after the baby is born, but increases the risk for type 2 diabetes later in life.\n\nIn Hawaii, diabetes is a significant health concern, with higher rates among Native Hawaiians and Pacific Islanders compared to other ethnic groups."
+      },
+      {
+        "id": "lesson1-2",
+        "title": "Traditional and Modern Approaches",
+        "content": "Managing diabetes effectively often involves combining modern medical approaches with traditional wisdom.\n\n**Modern Approaches**:\n- Regular blood sugar monitoring\n- Medication and insulin as prescribed\n- Regular medical check-ups\n- Exercise and physical activity\n\n**Traditional Approaches**:\n- Traditional Hawaiian foods like taro (kalo), sweet potato (ʻuala), and fresh fish are excellent choices for blood sugar management\n- Many traditional plants have properties that may help manage blood sugar levels\n- Traditional physical activities like hula, paddling, and swimming provide excellent exercise\n\nThe most effective approach is one that respects both traditional knowledge and modern medicine, creating a balanced plan that works for your individual needs."
+      }
+    ],
+    "quizzes": [
+      {
+        "id": "quiz1",
+        "title": "Diabetes Basics Quiz",
+        "description": "Test your knowledge about the basics of diabetes",
+        "questions": [
+          {
+            "id": "q1-1",
+            "questionText": "What hormone does the body use to regulate blood sugar?",
+            "options": [
+              {
+                "id": "q1-1-a",
+                "text": "Insulin"
+              },
+              {
+                "id": "q1-1-b",
+                "text": "Estrogen"
+              },
+              {
+                "id": "q1-1-c",
+                "text": "Testosterone"
+              },
+              {
+                "id": "q1-1-d",
+                "text": "Adrenaline"
+              }
+            ],
+            "correctOptionId": "q1-1-a",
+            "explanation": "Insulin is the hormone that regulates blood sugar by allowing glucose to enter cells for energy."
+          }
+        ]
+      }
+    ],
+    "completedBy": []
+  },
+  {
+    "id": "module2",
+    "title": "Heart Health for Hawaiians",
+    "description": "Explore heart health from both traditional and modern perspectives, with culturally relevant approaches to keeping your heart strong.",
+    "category": "heart-health",
+    "difficulty": "beginner",
+    "estimatedMinutes": 25,
+    "lessons": [
+      {
+        "id": "lesson2-1",
+        "title": "Understanding Heart Health",
+        "content": "Your heart is a vital organ that pumps blood throughout your body, delivering oxygen and nutrients to every cell. Keeping your heart healthy is essential for overall wellbeing and longevity.\n\nHeart disease is one of the leading causes of death in Hawaii, particularly affecting Native Hawaiians and Pacific Islanders at higher rates than other populations. Understanding heart health is therefore especially important for our communities.\n\nCommon heart conditions include:\n\n1. **Coronary Artery Disease**: Narrowing of the blood vessels that supply the heart muscle with blood and oxygen\n\n2. **Heart Failure**: When the heart can't pump blood as well as it should\n\n3. **Arrhythmias**: Irregular heartbeats\n\n4. **Heart Valve Disease**: When heart valves don't work properly\n\nMany factors that increase risk for heart disease can be managed through lifestyle changes and medical care."
+      }
+    ],
+    "quizzes": [],
+    "completedBy": []
+  }
+]

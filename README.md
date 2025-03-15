@@ -1,46 +1,109 @@
-# Getting Started with Create React App
+# Malama Health
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+A culturally relevant health literacy application for Hawaiian communities.
 
-## Available Scripts
+## Overview
 
-In the project directory, you can run:
+Malama Health is a web application designed to improve health literacy among underserved communities in Hawaii, including rural populations, Filipinos, Pacific Islanders, and older adults. The application provides culturally tailored health education, interactive learning modules, community forums, and resource directories.
 
-### `npm start`
+## Features
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+- **Learning Modules**: Interactive educational content about various health topics
+- **Community Forum**: Discussion boards for sharing experiences and asking questions
+- **Health Resources Directory**: Directory of local health services and resources
+- **User Dashboard**: Track progress through learning modules
+- **Cultural Integration**: Information presented with respect for Hawaiian culture and traditions
 
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
+## Tech Stack
 
-### `npm test`
+- **Frontend**: React with TypeScript, Tailwind CSS, Framer Motion
+- **Backend**: Node.js with Express
+- **Data Storage**: Local JSON file-based storage
+- **Authentication**: JWT-based authentication
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+## Getting Started
 
-### `npm run build`
+### Prerequisites
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+- Node.js (v14 or higher)
+- npm (v6 or higher)
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+### Installation
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+1. Clone the repository
+```bash
+git clone https://github.com/yourusername/malama-health.git
+cd malama-health
+```
 
-### `npm run eject`
+2. Install frontend dependencies
+```bash
+npm install
+```
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
+3. Install backend dependencies
+```bash
+cd backend
+npm install
+cd ..
+```
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+### Running the Application
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
+To run both frontend and backend concurrently:
 
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
+```bash
+npm run dev
+```
 
-## Learn More
+This will start:
+- Frontend: http://localhost:3000
+- Backend: http://localhost:5000
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+To run only the frontend:
+```bash
+npm start
+```
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+To run only the backend:
+```bash
+npm run start:backend
+```
+
+## Project Structure
+
+```
+malama-health/
+├── backend/                # Backend server code
+│   ├── src/
+│   │   ├── controllers/    # Request handlers
+│   │   ├── data/           # JSON data storage
+│   │   ├── models/         # Data models
+│   │   ├── routes/         # API routes
+│   │   └── server.js       # Main server file
+│   └── package.json
+├── public/                 # Public assets
+├── src/                    # Frontend React code
+│   ├── assets/             # Images and icons
+│   ├── components/         # Reusable UI components
+│   ├── context/            # React context providers
+│   ├── hooks/              # Custom React hooks
+│   ├── pages/              # Page components
+│   ├── services/           # API service layer
+│   ├── types/              # TypeScript type definitions
+│   └── utils/              # Utility functions
+└── package.json
+```
+
+## Contributing
+
+This project was created for a hackathon demonstration and is not actively maintained. Feel free to fork and extend it for your own purposes.
+
+## License
+
+This project is licensed under the MIT License.
+
+## Acknowledgments
+
+- Created for SWITCH x ICSpark Hackathon
+- Developed with a focus on cultural relevance and accessibility

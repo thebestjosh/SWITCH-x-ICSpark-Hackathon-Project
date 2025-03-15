@@ -67,7 +67,20 @@ export const DataProvider: React.FC<DataProviderProps> = ({ children }) => {
       await new Promise(resolve => setTimeout(resolve, 500));
       
       setLearningModules(mockLearningModules);
-      setForumPosts(mockForumPosts);
+      
+      // Load saved forum posts from localStorage or use empty array
+      try {
+        const savedForumPosts = localStorage.getItem('forumPosts');
+        if (savedForumPosts) {
+          setForumPosts(JSON.parse(savedForumPosts));
+        } else {
+          setForumPosts([]);
+        }
+      } catch (error) {
+        console.error('Error loading forum posts:', error);
+        setForumPosts([]);
+      }
+      
       setResources(mockResources);
       
       // Generate some mock notifications
@@ -111,11 +124,14 @@ export const DataProvider: React.FC<DataProviderProps> = ({ children }) => {
       views: 0,
     };
     
-    setForumPosts(prev => [newPost, ...prev]);
+    const updatedPosts = [newPost, ...forumPosts];
+    setForumPosts(updatedPosts);
+    // Save to localStorage
+    localStorage.setItem('forumPosts', JSON.stringify(updatedPosts));
   };
   
   const addForumComment = (postId: string, comment: {content: string, authorId: string, authorName: string}) => {
-    setForumPosts(prev => prev.map(post => {
+    const updatedPosts = forumPosts.map(post => {
       if (post.id === postId) {
         const newComment = {
           id: Math.random().toString(36).substring(2, 15),
@@ -131,15 +147,23 @@ export const DataProvider: React.FC<DataProviderProps> = ({ children }) => {
         };
       }
       return post;
-    }));
+    });
+    
+    setForumPosts(updatedPosts);
+    // Save to localStorage
+    localStorage.setItem('forumPosts', JSON.stringify(updatedPosts));
   };
   
   const likeForumPost = (postId: string) => {
-    setForumPosts(prev => prev.map(post => 
+    const updatedPosts = forumPosts.map(post => 
       post.id === postId 
         ? { ...post, likes: post.likes + 1 } 
         : post
-    ));
+    );
+    
+    setForumPosts(updatedPosts);
+    // Save to localStorage
+    localStorage.setItem('forumPosts', JSON.stringify(updatedPosts));
   };
   
   const saveQuizResult = (result: Omit<QuizResult, 'id'>) => {

@@ -74,13 +74,16 @@ export const AuthProvider: React.FC<AuthProviderProps> = ({ children }) => {
       // Simulate API call
       await new Promise(resolve => setTimeout(resolve, 1000));
       
-      if (email === 'demo@example.com' && password === 'password') {
-        setUser(mockUser);
-        localStorage.setItem('user', JSON.stringify(mockUser));
-        return true;
-      }
-      
-      return false;
+      // For demo purposes, accept any email/password
+      const loginUser = {
+        ...mockUser,
+        email: email,
+        username: email.split('@')[0],
+        name: email.split('@')[0]
+      };
+      setUser(loginUser);
+      localStorage.setItem('user', JSON.stringify(loginUser));
+      return true;
     } catch (error) {
       console.error('Login error:', error);
       return false;
