@@ -10,7 +10,7 @@
       "skibidi"
     ],
     "createdAt": "2025-03-15T22:31:46.343Z",
-    "updatedAt": "2025-03-15T22:55:23.283Z",
+    "updatedAt": "2025-03-15T23:02:26.953Z",
     "comments": [
       {
         "id": "5ef9c27a-a586-4a20-8bb5-7083f00bd3d7",
@@ -46,6 +46,15 @@
         "authorName": "kstewart27",
         "createdAt": "2025-03-15T22:55:23.283Z",
         "updatedAt": "2025-03-15T22:55:23.283Z",
+        "likes": 0
+      },
+      {
+        "id": "d077081c-6be0-4084-b75a-4a08c27e9ac2",
+        "content": "Efljkesfesfes",
+        "authorId": "17b4887c-a158-46e9-9b73-c3a7ae8d4eff",
+        "authorName": "Kai Stewart",
+        "createdAt": "2025-03-15T23:02:26.953Z",
+        "updatedAt": "2025-03-15T23:02:26.953Z",
         "likes": 0
       }
     ],

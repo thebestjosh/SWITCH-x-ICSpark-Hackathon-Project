@@ -1,1 +1,17 @@
-[]
+[
+  {
+    "id": "17b4887c-a158-46e9-9b73-c3a7ae8d4eff",
+    "username": "kstewart27",
+    "email": "kstewart27@punahou.edu",
+    "password": "Foosball22!!22",
+    "name": "Kai Stewart",
+    "language": "en",
+    "createdAt": "2025-03-15T23:02:17.068Z",
+    "preferences": {
+      "notificationsEnabled": true,
+      "darkMode": false,
+      "fontSize": "medium",
+      "language": "en"
+    }
+  }
+]

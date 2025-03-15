@@ -181,7 +181,7 @@ const ForumPage: React.FC = () => {
                         {formatCategory(post.category)}
                       </span>
                       
-                      {post.tags.slice(0, 3).map((tag, i) => (
+                      {post.tags && post.tags.length > 0 && post.tags.slice(0, 3).map((tag, i) => (
                         <span key={i} className="inline-block px-2 py-1 text-xs rounded-full bg-gray-100 text-gray-700">
                           {tag}
                         </span>

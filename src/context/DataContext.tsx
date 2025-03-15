@@ -86,30 +86,46 @@ export const DataProvider: React.FC<DataProviderProps> = ({ children }) => {
         const resourcesData = await resourcesAPI.getAllResources();
         setResources(resourcesData);
         
-        // Generate notifications (these would come from a notifications API in a real app)
-        const mockNotifications: Notification[] = [
-          {
-            id: '1',
-            userId: '1',
-            title: 'Welcome to Malama Health!',
-            message: 'Thank you for joining our community. Start your health journey today.',
-            type: 'system',
-            read: false,
-            createdAt: new Date().toISOString(),
-          },
-          {
-            id: '2',
-            userId: '1',
-            title: 'Quiz Reminder',
-            message: 'Don\'t forget to complete the quiz on Diabetes Management.',
-            type: 'reminder',
-            read: false,
-            createdAt: new Date(Date.now() - 86400000).toISOString(),
-            linkUrl: '/learn/diabetes/quizzes/1',
+        // Load notifications from localStorage or generate demo ones
+        let savedNotifications;
+        try {
+          const savedNotificationsStr = localStorage.getItem('notifications');
+          if (savedNotificationsStr) {
+            savedNotifications = JSON.parse(savedNotificationsStr);
           }
-        ];
+        } catch (error) {
+          console.error('Error parsing saved notifications:', error);
+        }
         
-        setNotifications(mockNotifications);
+        if (savedNotifications && savedNotifications.length > 0) {
+          setNotifications(savedNotifications);
+        } else {
+          // Generate demo notifications
+          const mockNotifications: Notification[] = [
+            {
+              id: '1',
+              userId: '1',
+              title: 'Welcome to Malama Health!',
+              message: 'Thank you for joining our community. Start your health journey today.',
+              type: 'system',
+              read: false,
+              createdAt: new Date().toISOString(),
+            },
+            {
+              id: '2',
+              userId: '1',
+              title: 'Quiz Reminder',
+              message: 'Don\'t forget to complete the quiz on Diabetes Management.',
+              type: 'reminder',
+              read: false,
+              createdAt: new Date(Date.now() - 86400000).toISOString(),
+              linkUrl: '/learn/diabetes/quizzes/1',
+            }
+          ];
+          
+          setNotifications(mockNotifications);
+          localStorage.setItem('notifications', JSON.stringify(mockNotifications));
+        }
       } catch (error) {
         console.error('Error loading data:', error);
         // Handle errors gracefully
@@ -275,17 +291,42 @@ export const DataProvider: React.FC<DataProviderProps> = ({ children }) => {
   };
   
   const markNotificationAsRead = (notificationId: string) => {
+    // Update local state
     setNotifications(prev => prev.map(notification => 
       notification.id === notificationId 
         ? { ...notification, read: true } 
         : notification
     ));
+    
+    // Save to localStorage as fallback
+    const updatedNotifications = notifications.map(notification => 
+      notification.id === notificationId 
+        ? { ...notification, read: true } 
+        : notification
+    );
+    
+    localStorage.setItem('notifications', JSON.stringify(updatedNotifications));
   };
   
-  const markAllNotificationsAsRead = () => {
-    setNotifications(prev => 
-      prev.map(notification => ({ ...notification, read: true }))
-    );
+  const markAllNotificationsAsRead = async () => {
+    try {
+      // Update local state
+      setNotifications(prev => 
+        prev.map(notification => ({ ...notification, read: true }))
+      );
+      
+      // Ideally, this would be saved to the backend
+      // We could create a notification API endpoint to update this
+      // For now, we'll save it to localStorage as a fallback
+      const updatedNotifications = notifications.map(notification => ({ 
+        ...notification, 
+        read: true 
+      }));
+      
+      localStorage.setItem('notifications', JSON.stringify(updatedNotifications));
+    } catch (error) {
+      console.error('Error marking all notifications as read:', error);
+    }
   };
   
   const deleteUserAccount = async (userId: string) => {
