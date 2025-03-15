@@ -1,0 +1,9 @@
+<svg width="400" height="200" xmlns="http://www.w3.org/2000/svg">
+  <rect width="400" height="200" fill="#80DEEA" />
+  <rect width="400" height="40" fill="#00BCD4" />
+  <text x="50%" y="25" font-family="Arial" font-size="16" fill="white" text-anchor="middle" dominant-baseline="middle">Heart Health</text>
+  <path d="M200,160 Q160,100 120,130 Q80,160 120,180 Q160,220 200,160 Q240,100 280,130 Q320,160 280,180 Q240,220 200,160 Z" fill="#F44336" />
+  <rect x="250" y="70" width="120" height="10" rx="5" fill="white" />
+  <rect x="250" y="90" width="100" height="10" rx="5" fill="white" />
+  <rect x="250" y="110" width="130" height="10" rx="5" fill="white" />
+</svg>

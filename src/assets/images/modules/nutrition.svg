@@ -1,0 +1,11 @@
+<svg width="400" height="200" xmlns="http://www.w3.org/2000/svg">
+  <rect width="400" height="200" fill="#AED581" />
+  <rect width="400" height="40" fill="#8BC34A" />
+  <text x="50%" y="25" font-family="Arial" font-size="16" fill="white" text-anchor="middle" dominant-baseline="middle">Nutrition</text>
+  <circle cx="100" cy="100" r="40" fill="#FFEB3B" />
+  <path d="M100,70 Q120,90 100,130 Q80,90 100,70" fill="#8BC34A" />
+  <rect x="170" y="70" width="180" height="10" rx="5" fill="white" />
+  <rect x="170" y="90" width="140" height="10" rx="5" fill="white" />
+  <rect x="170" y="110" width="160" height="10" rx="5" fill="white" />
+  <rect x="170" y="130" width="120" height="10" rx="5" fill="white" />
+</svg>

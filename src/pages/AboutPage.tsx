@@ -7,17 +7,17 @@ const AboutPage: React.FC = () => {
     {
       name: 'Josh Zhang',
       role: 'Coder',
-      bio: 'Sigma coder who made the entire frontend'
+      bio: 'Dedicated to bringing accessible health information to underserved communities in Hawaiʻi.'
     },
     {
       name: 'Kai Stewart',
       role: 'Coder',
-      bio: 'made functional backend (carried frfr)'
+      bio: 'Focused on developing engaging and accessible user interfaces for health education.'
     },
     {
       name: 'Julian Williams',
       role: 'Coder',
-      bio: 'Rizzler who also made the front end'
+      bio: 'Specializes in creating interactive learning modules and community forum features.'
     }
   ];
 
@@ -65,9 +65,11 @@ const AboutPage: React.FC = () => {
                 transition={{ duration: 0.3, delay: 0.2 + (index * 0.1) }}
               >
                 <Card>
-                  <h3 className="text-xl font-bold text-gray-800 mb-1">{member.name}</h3>
-                  <p className="text-primary font-medium mb-3">{member.role}</p>
-                  <p className="text-gray-600">{member.bio}</p>
+                  <div>
+                    <h3 className="text-xl font-bold text-gray-800 mb-1">{member.name}</h3>
+                    <p className="text-primary font-medium mb-3">{member.role}</p>
+                    <p className="text-gray-600">{member.bio}</p>
+                  </div>
                 </Card>
               </motion.div>
             ))}

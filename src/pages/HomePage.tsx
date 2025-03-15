@@ -60,7 +60,14 @@ const HomePage: React.FC = () => {
   return (
     <div>
       {/* Hero Section */}
-      <section className="bg-gradient-to-r from-primary to-secondary text-white py-20">
+      <section 
+        className="text-white py-20 relative"
+        style={{
+          backgroundImage: `url(${require('../assets/images/hero-background.svg').default})`,
+          backgroundSize: 'cover',
+          backgroundPosition: 'center'
+        }}
+      >
         <motion.div 
           className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8"
           initial="hidden"
@@ -170,7 +177,7 @@ const HomePage: React.FC = () => {
               )}
               {isAuthenticated && (
                 <Link to="/dashboard">
-                  <Button size="lg" className="bg-white hover:bg-gray-100">
+                  <Button size="lg" style={{ backgroundColor: 'white', color: '#50ac54' }} className="hover:bg-gray-100">
                     Go to Dashboard
                   </Button>
                 </Link>
