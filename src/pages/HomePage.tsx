@@ -20,44 +20,66 @@ const HomePage: React.FC = () => {
     }
   };
   
-  const features = [
+  // Define features with translations
+  const featureData = [
     {
-      title: 'Tailored Health Education',
-      description: 'Learn more about relevant health education tailored for Hawai`i residents. Learn more',
+      titleKey: 'home.features.tailoredEducation',
+      descriptionKey: 'home.features.tailoredEducationDesc',
       icon: '🏝️',
       link: '/learn'
     },
     {
-      title: 'Interactive Learning Modules',
-      description: 'Engage with easy-to-understand modules on diabetes, heart health, and nutrition.',
+      titleKey: 'home.features.interactiveModules',
+      descriptionKey: 'home.features.interactiveModulesDesc',
       icon: '🧐',
       link: '/learn'
     },
     {
-      title: 'Community Forum',
-      description: 'Connect with others. Share experiences, get support from your community.',
+      titleKey: 'home.features.communityForum',
+      descriptionKey: 'home.features.communityForumDesc',
       icon: '👥',
       link: '/forum'
     },
     {
-      title: 'Health Resources Directory',
-      description: 'Find local health services, community programs, and support groups near you.',
+      titleKey: 'home.features.resourceDirectory',
+      descriptionKey: 'home.features.resourceDirectoryDesc',
       icon: '🔍',
       link: '/resources'
     },
     {
-      title: 'Educational Resources',
-      description: 'Access educational content about various health topics and conditions.',
+      titleKey: 'home.features.educationalContent',
+      descriptionKey: 'home.features.educationalContentDesc',
       icon: '📚',
       link: '/learn'
     },
     {
-      title: 'Health Tracking Tools',
-      description: 'Monitor your progress with simple tools designed for your health needs.',
+      titleKey: 'home.features.trackingTools',
+      descriptionKey: 'home.features.trackingToolsDesc',
       icon: '📊',
       link: '/dashboard'
     }
   ];
+  
+  // Map to features with translations applied
+  // For now we'll use these as fallbacks until we add these keys to the translation files
+  const features = featureData.map(feature => ({
+    title: t(feature.titleKey) === feature.titleKey ? 
+      (feature.titleKey === 'home.features.tailoredEducation' ? 'Tailored Health Education' :
+       feature.titleKey === 'home.features.interactiveModules' ? 'Interactive Learning Modules' :
+       feature.titleKey === 'home.features.communityForum' ? 'Community Forum' :
+       feature.titleKey === 'home.features.resourceDirectory' ? 'Health Resources Directory' :
+       feature.titleKey === 'home.features.educationalContent' ? 'Educational Resources' :
+       'Health Tracking Tools') : t(feature.titleKey),
+    description: t(feature.descriptionKey) === feature.descriptionKey ? 
+      (feature.descriptionKey === 'home.features.tailoredEducationDesc' ? 'Learn more about relevant health education tailored for Hawai`i residents. Learn more' :
+       feature.descriptionKey === 'home.features.interactiveModulesDesc' ? 'Engage with easy-to-understand modules on diabetes, heart health, and nutrition.' :
+       feature.descriptionKey === 'home.features.communityForumDesc' ? 'Connect with others. Share experiences, get support from your community.' :
+       feature.descriptionKey === 'home.features.resourceDirectoryDesc' ? 'Find local health services, community programs, and support groups near you.' :
+       feature.descriptionKey === 'home.features.educationalContentDesc' ? 'Access educational content about various health topics and conditions.' :
+       'Monitor your progress with simple tools designed for your health needs.') : t(feature.descriptionKey),
+    icon: feature.icon,
+    link: feature.link
+  }));
   
   return (
     <div>
@@ -109,10 +131,10 @@ const HomePage: React.FC = () => {
             transition={{ duration: 0.6, delay: 0.1 }}
           >
             <h2 className="text-3xl font-display font-bold mb-4 text-gray-800">
-              Empowering Healthier Communities
+              {t('home.featuredModules')}
             </h2>
             <p className="text-xl text-gray-600 max-w-3xl mx-auto">
-              Our platform offers a variety of features designed to improve health literacy while honoring cultural practices and traditions.
+              {t('home.communityDesc')}
             </p>
           </motion.div>
           
@@ -147,10 +169,10 @@ const HomePage: React.FC = () => {
             transition={{ duration: 0.6 }}
           >
             <h2 className="text-3xl font-display font-bold mb-4 text-gray-800">
-              Health Education Resources
+              {t('resources.resourceDirectory')}
             </h2>
             <p className="text-xl text-gray-600 max-w-3xl mx-auto">
-              Our platform offers a variety of resources to support your health journey.
+              {t('home.exploreResources')}
             </p>
           </motion.div>
         </div>

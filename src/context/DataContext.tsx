@@ -310,19 +310,18 @@ export const DataProvider: React.FC<DataProviderProps> = ({ children }) => {
   
   const markAllNotificationsAsRead = async () => {
     try {
-      // Update local state
-      setNotifications(prev => 
-        prev.map(notification => ({ ...notification, read: true }))
-      );
-      
-      // Ideally, this would be saved to the backend
-      // We could create a notification API endpoint to update this
-      // For now, we'll save it to localStorage as a fallback
+      // Update local state with new notifications where all are read
       const updatedNotifications = notifications.map(notification => ({ 
         ...notification, 
         read: true 
       }));
       
+      // Save to state
+      setNotifications(updatedNotifications);
+      
+      // Ideally, this would be saved to the backend
+      // We could create a notification API endpoint to update this
+      // For now, we'll save it to localStorage as a fallback
       localStorage.setItem('notifications', JSON.stringify(updatedNotifications));
     } catch (error) {
       console.error('Error marking all notifications as read:', error);
