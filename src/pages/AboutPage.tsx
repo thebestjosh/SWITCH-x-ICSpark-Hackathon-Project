@@ -6,7 +6,7 @@ const AboutPage: React.FC = () => {
   const teamMembers = [
     {
       name: 'Josh Zhang',
-      role: 'Coder',
+      role: 'The Sigma',
       bio: 'Dedicated to bringing accessible health information to underserved communities in Hawaiʻi.'
     },
     {
@@ -16,7 +16,7 @@ const AboutPage: React.FC = () => {
     },
     {
       name: 'Julian Williams',
-      role: 'Coder',
+      role: 'Alpha Wolf',
       bio: 'Specializes in creating interactive learning modules and community forum features.'
     }
   ];
