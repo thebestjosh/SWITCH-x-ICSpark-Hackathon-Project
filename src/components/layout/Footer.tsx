@@ -84,7 +84,7 @@ const Footer: React.FC = () => {
         
         <div className="mt-12 pt-8 border-t border-gray-700">
           <p className="text-gray-400 text-sm text-center">
-            © {new Date().getFullYear()} Mālama Health. Created for SWITCH x ICSpark Hackathon. This is a demo application.
+            Mālama Health. Created for {new Date().getFullYear()}  SWITCH x ICSpark Hackathon. This is a demo application.
           </p>
           <div className="mt-4 flex justify-center space-x-6">
             <Link to="/privacy" className="text-gray-400 hover:text-gray-300 text-sm">
