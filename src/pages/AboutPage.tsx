@@ -11,7 +11,7 @@ const AboutPage: React.FC = () => {
     },
     {
       name: 'Kai Stewart',
-      role: 'Coder',
+      role: 'Cute Coder',
       bio: 'Focused on developing engaging and accessible user interfaces for health education.'
     },
     {
