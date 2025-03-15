@@ -12,7 +12,7 @@ import { HealthCategory } from '../types';
 const CATEGORIES: (HealthCategory | 'general')[] = [
   'general',
   'diabetes',
-  'heart-health',
+  'heart',
   'nutrition',
   'mental-health',
   'physical-activity',

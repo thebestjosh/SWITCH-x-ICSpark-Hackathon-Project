@@ -338,7 +338,7 @@ const heartHealthModule: LearningModule = {
   id: 'module2',
   title: 'Heart Health Essentials',
   description: 'Learn about heart disease prevention and management with a focus on traditional and cultural approaches to cardiovascular health.',
-  category: 'heart-health',
+  category: 'heart',
   difficulty: 'beginner',
   estimatedMinutes: 40,
   lessons: heartHealthLessons,
@@ -374,7 +374,7 @@ const nutritionQuiz: Quiz = {
         { id: 'd', text: 'Soda' }
       ],
       correctOptionId: 'b',
-      explanation: 'Avocados contain monounsaturated fats that are heart-healthy and beneficial for overall health.'
+      explanation: 'Avocados contain monounsaturated fats that are hearty and beneficial for overall health.'
     },
     {
       id: 'q3',
