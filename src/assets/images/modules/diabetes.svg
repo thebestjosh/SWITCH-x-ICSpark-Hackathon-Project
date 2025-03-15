@@ -1,0 +1,10 @@
+<svg width="400" height="200" xmlns="http://www.w3.org/2000/svg">
+  <rect width="400" height="200" fill="#6CD4A5" />
+  <rect width="400" height="40" fill="#4CAF50" />
+  <text x="50%" y="25" font-family="Arial" font-size="16" fill="white" text-anchor="middle" dominant-baseline="middle">Diabetes Management</text>
+  <circle cx="100" cy="100" r="30" fill="#FF9800" />
+  <rect x="170" y="70" width="180" height="10" rx="5" fill="white" />
+  <rect x="170" y="90" width="140" height="10" rx="5" fill="white" />
+  <rect x="170" y="110" width="160" height="10" rx="5" fill="white" />
+  <rect x="170" y="130" width="120" height="10" rx="5" fill="white" />
+</svg>
