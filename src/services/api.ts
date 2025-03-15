@@ -1,6 +1,6 @@
 import axios from 'axios';
 
-const API_URL = 'http://localhost:5000/api';
+const API_URL = 'http://localhost:3001/api';
 
 // Axios instance with base configuration
 const api = axios.create({
@@ -51,6 +51,11 @@ const authAPI = {
   
   updatePreferences: async (userId: string, preferences: any) => {
     const response = await api.put(`/users/${userId}/preferences`, preferences);
+    return response.data;
+  },
+  
+  deleteAccount: async (userId: string) => {
+    const response = await api.delete(`/users/${userId}`);
     return response.data;
   }
 };
@@ -124,4 +129,22 @@ const learningAPI = {
   }
 };
 
-export { authAPI, forumAPI, resourcesAPI, learningAPI };
+// Quiz API
+const quizAPI = {
+  submitQuizResult: async (quizResult: any) => {
+    const response = await api.post('/learning/quiz-results', quizResult);
+    return response.data;
+  },
+  
+  getQuizResults: async (userId: string) => {
+    const response = await api.get(`/learning/quiz-results/${userId}`);
+    return response.data;
+  },
+  
+  getQuizResultsByModule: async (moduleId: string) => {
+    const response = await api.get(`/learning/quiz-results/module/${moduleId}`);
+    return response.data;
+  }
+};
+
+export { authAPI, forumAPI, resourcesAPI, learningAPI, quizAPI };

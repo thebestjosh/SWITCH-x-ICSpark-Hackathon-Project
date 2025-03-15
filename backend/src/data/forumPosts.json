@@ -1,1 +1,28 @@
-[]
+[
+  {
+    "id": "e7811dbe-f7c2-4492-9f10-567c2b671b0a",
+    "title": "Forum fmroefa",
+    "content": "feaslfejwajfpejafeaslfejwajfpejafeaslfejwajfpejafeaslfejwajfpeja",
+    "category": "heart",
+    "authorId": "1",
+    "authorName": "kstewart27",
+    "tags": [
+      "skibidi"
+    ],
+    "createdAt": "2025-03-15T22:31:46.343Z",
+    "updatedAt": "2025-03-15T22:34:27.729Z",
+    "comments": [
+      {
+        "id": "5ef9c27a-a586-4a20-8bb5-7083f00bd3d7",
+        "content": "efafesafes",
+        "authorId": "1",
+        "authorName": "kstewart27",
+        "createdAt": "2025-03-15T22:34:27.729Z",
+        "updatedAt": "2025-03-15T22:34:27.729Z",
+        "likes": 0
+      }
+    ],
+    "likes": 21,
+    "views": 0
+  }
+]

@@ -103,22 +103,108 @@ const userModel = {
     const users = await readData('users.json');
     
     // In a real application, password would be hashed
-    const user = users.find(user => 
-      user.email === email && user.password === password
-    );
+    // For demo purposes, accept any credentials and create user if not found
+    let user = users.find(user => user.email === email);
 
     if (!user) {
-      return { error: 'Invalid credentials' };
+      // Create a new user for demo purposes
+      const result = await userModel.create({
+        username: email.split('@')[0],
+        email,
+        name: email.split('@')[0],
+        password: password,
+        language: 'en'
+      });
+      
+      return result;
     }
 
     // Generate token
     const token = jwt.sign(
       { id: user.id, username: user.username },
       JWT_SECRET,
-      { expiresIn: '1d' }
+      { expiresIn: '7d' }
     );
 
     return { user, token };
+  },
+  
+  // Update user progress
+  updateProgress: async (userId, progressData) => {
+    const users = await readData('users.json');
+    const index = users.findIndex(user => user.id === userId);
+    
+    if (index === -1) {
+      return { error: 'User not found' };
+    }
+    
+    // Initialize progress if it doesn't exist
+    if (!users[index].progress) {
+      users[index].progress = {
+        completedModules: [],
+        quizResults: [],
+        forumPosts: [],
+        forumComments: []
+      };
+    }
+    
+    // Update progress fields
+    if (progressData.completedModules) {
+      // Add new modules to completed list without duplicates
+      if (!users[index].progress.completedModules) {
+        users[index].progress.completedModules = [];
+      }
+      
+      progressData.completedModules.forEach(moduleId => {
+        if (!users[index].progress.completedModules.includes(moduleId)) {
+          users[index].progress.completedModules.push(moduleId);
+        }
+      });
+    }
+    
+    if (progressData.quizResults) {
+      // Add new quiz results
+      if (!users[index].progress.quizResults) {
+        users[index].progress.quizResults = [];
+      }
+      
+      progressData.quizResults.forEach(resultId => {
+        if (!users[index].progress.quizResults.includes(resultId)) {
+          users[index].progress.quizResults.push(resultId);
+        }
+      });
+    }
+    
+    if (progressData.forumPosts) {
+      // Add new forum posts
+      if (!users[index].progress.forumPosts) {
+        users[index].progress.forumPosts = [];
+      }
+      
+      progressData.forumPosts.forEach(postId => {
+        if (!users[index].progress.forumPosts.includes(postId)) {
+          users[index].progress.forumPosts.push(postId);
+        }
+      });
+    }
+    
+    if (progressData.forumComments) {
+      // Add new forum comments
+      if (!users[index].progress.forumComments) {
+        users[index].progress.forumComments = [];
+      }
+      
+      progressData.forumComments.forEach(commentId => {
+        if (!users[index].progress.forumComments.includes(commentId)) {
+          users[index].progress.forumComments.push(commentId);
+        }
+      });
+    }
+    
+    users[index].updatedAt = new Date().toISOString();
+    await writeData('users.json', users);
+    
+    return { user: users[index] };
   }
 };
 

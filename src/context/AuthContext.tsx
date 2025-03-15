@@ -75,11 +75,14 @@ export const AuthProvider: React.FC<AuthProviderProps> = ({ children }) => {
       await new Promise(resolve => setTimeout(resolve, 1000));
       
       // For demo purposes, accept any email/password
-      const loginUser = {
-        ...mockUser,
-        email: email,
+      const loginUser: User = {
+        id: '1', // Use a consistent ID for the demo user
         username: email.split('@')[0],
-        name: email.split('@')[0]
+        email: email,
+        name: email.split('@')[0],
+        language: 'en',
+        preferences: defaultPreferences,
+        createdAt: new Date().toISOString(),
       };
       setUser(loginUser);
       localStorage.setItem('user', JSON.stringify(loginUser));

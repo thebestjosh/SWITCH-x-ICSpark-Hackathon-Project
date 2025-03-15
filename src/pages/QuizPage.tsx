@@ -8,6 +8,7 @@ import Button from '../components/ui/Button';
 import Loader from '../components/ui/Loader';
 import { formatCategory, calculateQuizScore } from '../utils/helpers';
 import { LearningModule, Quiz, QuizQuestion } from '../types';
+import ReactMarkdown from 'react-markdown';
 
 interface QuizState {
   currentQuestionIndex: number;
@@ -98,6 +99,7 @@ const QuizPage: React.FC = () => {
         saveQuizResult({
           userId: user.id,
           quizId: quiz.id,
+          moduleId: moduleId,
           score,
           correctAnswers: correctCount,
           totalQuestions: quiz.questions.length,
@@ -208,9 +210,11 @@ const QuizPage: React.FC = () => {
           <Card>
             {!quizState.showResults ? (
               <div>
-                <h2 className="text-xl font-bold text-gray-800 mb-6">
-                  {currentQuestion.questionText}
-                </h2>
+                <div className="text-xl font-bold text-gray-800 mb-6">
+                  <ReactMarkdown>
+                    {currentQuestion.questionText}
+                  </ReactMarkdown>
+                </div>
                 
                 <div className="space-y-3">
                   {currentQuestion.options.map((option) => (
@@ -298,9 +302,9 @@ const QuizPage: React.FC = () => {
                   <div className="space-y-6">
                     {quiz.questions.map((question, index) => (
                       <div key={question.id} className="p-4 border rounded-lg">
-                        <p className="font-medium text-gray-800 mb-3">
-                          {index + 1}. {question.questionText}
-                        </p>
+                        <div className="font-medium text-gray-800 mb-3">
+                          {index + 1}. <ReactMarkdown>{question.questionText}</ReactMarkdown>
+                        </div>
                         
                         <div className="space-y-2 mb-4">
                           {question.options.map((option) => {
@@ -353,7 +357,9 @@ const QuizPage: React.FC = () => {
                         
                         <div className="bg-gray-50 p-3 rounded-lg text-sm">
                           <p className="font-medium text-gray-700 mb-1">Explanation:</p>
-                          <p className="text-gray-600">{question.explanation}</p>
+                          <div className="text-gray-600">
+                            <ReactMarkdown>{question.explanation}</ReactMarkdown>
+                          </div>
                         </div>
                       </div>
                     ))}

@@ -1,4 +1,5 @@
 const learningModel = require('../models/learning');
+const userModel = require('../models/user');
 
 // Learning controller functions
 const learningController = {
@@ -169,9 +170,87 @@ const learningController = {
         return res.status(404).json({ error: result.error });
       }
       
+      // Update user's progress
+      await userModel.updateProgress(userId, {
+        completedModules: [req.params.id]
+      });
+      
       res.json(result);
     } catch (error) {
       console.error('Error marking module as completed:', error);
+      res.status(500).json({ error: 'Server error' });
+    }
+  },
+  
+  // Submit quiz result
+  submitQuizResult: async (req, res) => {
+    try {
+      const { userId, quizId, moduleId, score, correctAnswers, totalQuestions, completedAt } = req.body;
+      
+      // Validate input
+      if (!userId || !quizId || !score) {
+        return res.status(400).json({ error: 'User ID, quiz ID, and score are required' });
+      }
+      
+      // Save quiz result
+      const result = await learningModel.saveQuizResult({
+        userId,
+        quizId,
+        moduleId,
+        score,
+        correctAnswers,
+        totalQuestions,
+        completedAt
+      });
+      
+      // If score is passing (>=70%), mark module as completed
+      if (score >= 70 && moduleId) {
+        await learningModel.markAsCompleted(moduleId, userId);
+        
+        // Update user's progress in users.json
+        await userModel.updateProgress(userId, {
+          completedModules: [moduleId],
+          quizResults: [result.id]
+        });
+      }
+      
+      res.status(201).json(result);
+    } catch (error) {
+      console.error('Error submitting quiz result:', error);
+      res.status(500).json({ error: 'Server error' });
+    }
+  },
+  
+  // Get quiz results by user
+  getQuizResultsByUser: async (req, res) => {
+    try {
+      const userId = req.params.userId;
+      
+      if (!userId) {
+        return res.status(400).json({ error: 'User ID is required' });
+      }
+      
+      const results = await learningModel.getQuizResultsByUser(userId);
+      res.json(results);
+    } catch (error) {
+      console.error('Error getting quiz results:', error);
+      res.status(500).json({ error: 'Server error' });
+    }
+  },
+  
+  // Get quiz results by module
+  getQuizResultsByModule: async (req, res) => {
+    try {
+      const moduleId = req.params.moduleId;
+      
+      if (!moduleId) {
+        return res.status(400).json({ error: 'Module ID is required' });
+      }
+      
+      const results = await learningModel.getQuizResultsByModule(moduleId);
+      res.json(results);
+    } catch (error) {
+      console.error('Error getting quiz results by module:', error);
       res.status(500).json({ error: 'Server error' });
     }
   }

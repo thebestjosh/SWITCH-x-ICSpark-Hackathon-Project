@@ -3,6 +3,7 @@ import { BrowserRouter as Router, Routes, Route, Navigate } from 'react-router-d
 import { AuthProvider } from './context/AuthContext';
 import { DataProvider } from './context/DataContext';
 import Layout from './components/layout/Layout';
+import ErrorBoundary from './components/ui/ErrorBoundary';
 
 // Pages
 import HomePage from './pages/HomePage';
@@ -27,16 +28,17 @@ const NotFoundPage = React.lazy(() => import('./pages/NotFoundPage'));
 
 const App: React.FC = () => {
   return (
-    <Router>
-      <AuthProvider>
-        <DataProvider>
-          <Layout>
-            <React.Suspense fallback={<div className="flex justify-center items-center h-96">Loading...</div>}>
-              <Routes>
-                <Route path="/" element={<HomePage />} />
-                <Route path="/login" element={<LoginPage />} />
-                <Route path="/register" element={<RegisterPage />} />
-                <Route path="/dashboard" element={<DashboardPage />} />
+    <ErrorBoundary>
+      <Router>
+        <AuthProvider>
+          <DataProvider>
+            <Layout>
+              <React.Suspense fallback={<div className="flex justify-center items-center h-96">Loading...</div>}>
+                <Routes>
+                  <Route path="/" element={<HomePage />} />
+                  <Route path="/login" element={<LoginPage />} />
+                  <Route path="/register" element={<RegisterPage />} />
+                  <Route path="/dashboard" element={<DashboardPage />} />
                 
                 {/* Learning routes */}
                 <Route path="/learn" element={<LearnPage />} />
@@ -70,6 +72,7 @@ const App: React.FC = () => {
         </DataProvider>
       </AuthProvider>
     </Router>
+    </ErrorBoundary>
   );
 };
 

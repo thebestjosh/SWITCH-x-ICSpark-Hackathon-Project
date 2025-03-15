@@ -5,8 +5,9 @@ import { useData } from '../context/DataContext';
 import Card from '../components/ui/Card';
 import Button from '../components/ui/Button';
 import Loader from '../components/ui/Loader';
-import { formatCategory, simpleMarkdownToHtml } from '../utils/helpers';
+import { formatCategory } from '../utils/helpers';
 import { LearningModule, Lesson } from '../types';
+import ReactMarkdown from 'react-markdown';
 
 const LessonPage: React.FC = () => {
   const { category, moduleId, lessonId } = useParams<{ 
@@ -126,18 +127,15 @@ const LessonPage: React.FC = () => {
           className="mb-8"
         >
           <Card className="prose max-w-none">
-            {/* We use dangerouslySetInnerHTML here to render the markdown as HTML.
-                In a real app, you should use a proper markdown renderer like react-markdown */}
-            <div 
-              dangerouslySetInnerHTML={{ 
-                __html: simpleMarkdownToHtml(lesson.content) 
-              }} 
-            />
+            <ReactMarkdown>
+              {lesson.content}
+            </ReactMarkdown>
             
             {lesson.imageUrls && lesson.imageUrls.length > 0 && (
               <div className="mt-6 space-y-4">
                 {lesson.imageUrls.map((imageUrl, index) => (
                   <div key={index} className="flex justify-center">
+                    <img src={imageUrl} alt={`Lesson illustration ${index + 1}`} className="max-w-full h-auto" />
                   </div>
                 ))}
               </div>

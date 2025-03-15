@@ -1,4 +1,5 @@
 const forumModel = require('../models/forum');
+const userModel = require('../models/user');
 
 // Forum controller functions
 const forumController = {
@@ -64,6 +65,11 @@ const forumController = {
         tags: tags || []
       });
       
+      // Update user's progress to track their forum activity
+      await userModel.updateProgress(authorId, {
+        forumPosts: [newPost.id]
+      });
+      
       res.status(201).json(newPost);
     } catch (error) {
       console.error('Error creating forum post:', error);
@@ -123,6 +129,17 @@ const forumController = {
       
       if (result.error) {
         return res.status(404).json({ error: result.error });
+      }
+      
+      // Find the comment ID that was just added
+      const post = await forumModel.getById(req.params.id);
+      const newComment = post.comments[post.comments.length - 1];
+      
+      // Update user's progress to track their forum activity
+      if (newComment) {
+        await userModel.updateProgress(authorId, {
+          forumComments: [newComment.id]
+        });
       }
       
       res.status(201).json(result);

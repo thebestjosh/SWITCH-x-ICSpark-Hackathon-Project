@@ -15,6 +15,7 @@ const DashboardPage: React.FC = () => {
     notifications, 
     quizResults,
     markNotificationAsRead,
+    markAllNotificationsAsRead,
     isLoading: dataLoading 
   } = useData();
   
@@ -162,7 +163,7 @@ const DashboardPage: React.FC = () => {
             <Card>
               <div className="flex justify-between items-center mb-6">
                 <h2 className="text-xl font-bold text-gray-800">Notifications</h2>
-                <Button variant="text" size="sm">Mark All Read</Button>
+                <Button variant="text" size="sm" onClick={markAllNotificationsAsRead}>Mark All Read</Button>
               </div>
               
               <div className="space-y-4">

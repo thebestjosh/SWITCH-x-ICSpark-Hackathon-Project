@@ -29,4 +29,9 @@ router.post('/modules/:id/quizzes', learningController.addQuiz);
 // POST mark module as completed
 router.post('/modules/:id/complete', learningController.markAsCompleted);
 
+// Quiz result routes
+router.post('/quiz-results', learningController.submitQuizResult);
+router.get('/quiz-results/:userId', learningController.getQuizResultsByUser);
+router.get('/quiz-results/module/:moduleId', learningController.getQuizResultsByModule);
+
 module.exports = router;

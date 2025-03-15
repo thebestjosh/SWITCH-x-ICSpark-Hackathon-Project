@@ -1,1 +1,24 @@
-[]
+[
+  {
+    "id": "15fde4e3-56cd-4ca6-a6ad-7f8f1ae514e6",
+    "title": "Health Resource Placeholder 1",
+    "description": "This is a placeholder for health resources that would be available in the application.",
+    "category": "general",
+    "tags": [
+      "health",
+      "resources",
+      "placeholder"
+    ]
+  },
+  {
+    "id": "a066056f-66c6-45e1-9d87-173041d896d5",
+    "title": "Health Resource Placeholder 2",
+    "description": "Another placeholder for health resources that would be available in the application.",
+    "category": "general",
+    "tags": [
+      "health",
+      "resources",
+      "placeholder"
+    ]
+  }
+]

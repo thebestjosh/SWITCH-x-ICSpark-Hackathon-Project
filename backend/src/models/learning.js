@@ -180,6 +180,50 @@ const learningModel = {
     }
     
     return modules[index];
+  },
+  
+  // Save quiz result
+  saveQuizResult: async (quizResultData) => {
+    // Get existing quiz results
+    let quizResults = await readData('quizResults.json');
+    
+    // If file doesn't exist or is empty, initialize with empty array
+    if (!quizResults) {
+      quizResults = [];
+    }
+    
+    const newQuizResult = {
+      id: generateId(),
+      ...quizResultData,
+      createdAt: new Date().toISOString()
+    };
+    
+    quizResults.push(newQuizResult);
+    await writeData('quizResults.json', quizResults);
+    
+    return newQuizResult;
+  },
+  
+  // Get all quiz results for a user
+  getQuizResultsByUser: async (userId) => {
+    const quizResults = await readData('quizResults.json');
+    
+    if (!quizResults) {
+      return [];
+    }
+    
+    return quizResults.filter(result => result.userId === userId);
+  },
+  
+  // Get all quiz results for a module
+  getQuizResultsByModule: async (moduleId) => {
+    const quizResults = await readData('quizResults.json');
+    
+    if (!quizResults) {
+      return [];
+    }
+    
+    return quizResults.filter(result => result.moduleId === moduleId);
   }
 };
 

@@ -12,7 +12,7 @@ import { ForumPost, ForumComment } from '../types';
 
 const ForumPostDetailPage: React.FC = () => {
   const { postId } = useParams<{ postId: string }>();
-  const { forumPosts, isLoading, addForumComment, likeForumPost } = useData();
+  const { forumPosts, isLoading, addForumComment, likeForumPost, likeForumComment } = useData();
   const { user, isAuthenticated } = useAuth();
   const navigate = useNavigate();
   
@@ -80,8 +80,8 @@ const ForumPostDetailPage: React.FC = () => {
         >
           <Link to="/forum" className="hover:text-primary">Forum</Link>
           <span className="mx-2">/</span>
-          <Link to={`/forum/category/${post.category}`} className="hover:text-primary">
-            {formatCategory(post.category)}
+          <Link to={`/forum/category/${post?.category || 'general'}`} className="hover:text-primary">
+            {formatCategory(post?.category) || 'General'}
           </Link>
           <span className="mx-2">/</span>
           <span className="text-gray-700 truncate max-w-xs">{post.title}</span>
@@ -104,7 +104,7 @@ const ForumPostDetailPage: React.FC = () => {
             
             <div className="flex flex-wrap items-center gap-2 mb-6">
               <span className="inline-block px-2 py-1 text-xs font-medium rounded-full bg-primary-light text-white">
-                {formatCategory(post.category)}
+                {formatCategory(post.category) || 'General'}
               </span>
               
               {post.tags.map((tag, i) => (
@@ -201,7 +201,10 @@ const ForumPostDetailPage: React.FC = () => {
                     </div>
                     
                     <div className="ml-11 mt-2 flex items-center text-xs text-gray-500">
-                      <button className="flex items-center hover:text-primary transition-colors">
+                      <button 
+                        onClick={() => post && isAuthenticated && likeForumComment(post.id, comment.id)}
+                        className="flex items-center hover:text-primary transition-colors"
+                      >
                         <svg className="h-4 w-4 mr-1" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                           <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z" />
                         </svg>

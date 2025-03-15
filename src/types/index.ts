@@ -83,8 +83,10 @@ export interface QuizOption {
 }
 
 export interface QuizResult {
+  id?: string;
   userId: string;
   quizId: string;
+  moduleId?: string;
   score: number;
   correctAnswers: number;
   totalQuestions: number;

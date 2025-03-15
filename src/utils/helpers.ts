@@ -83,7 +83,10 @@ export const capitalizeFirstLetter = (string: string): string => {
 /**
  * Formats a category string for display (replaces hyphens with spaces and capitalizes words)
  */
-export const formatCategory = (category: string): string => {
+export const formatCategory = (category: string | undefined): string => {
+  // Return empty string if category is null or undefined
+  if (!category) return '';
+  
   return category
     .split('-')
     .map(word => capitalizeFirstLetter(word))
@@ -113,34 +116,3 @@ export const formatPhoneNumber = (phoneNumber: string): string => {
   return phoneNumber;
 };
 
-/**
- * Converts a markdown string to HTML
- * Note: In a real app, you'd use a proper markdown library
- */
-export const simpleMarkdownToHtml = (markdown: string): string => {
-  let html = markdown;
-  
-  // Headers
-  html = html.replace(/^# (.+)$/gm, '<h1>$1</h1>');
-  html = html.replace(/^## (.+)$/gm, '<h2>$1</h2>');
-  html = html.replace(/^### (.+)$/gm, '<h3>$1</h3>');
-  
-  // Bold
-  html = html.replace(/\*\*(.+?)\*\*/g, '<strong>$1</strong>');
-  
-  // Italic
-  html = html.replace(/\*(.+?)\*/g, '<em>$1</em>');
-  
-  // Lists
-  html = html.replace(/^- (.+)$/gm, '<li>$1</li>');
-  
-  // Wrap lists in ul
-  if (html.includes('<li>')) {
-    html = html.replace(/(<li>.*?<\/li>)+/gs, match => `<ul>${match}</ul>`);
-  }
-  
-  // Paragraphs (must be done last)
-  html = html.replace(/^(?!<[a-z]).+$/gm, '<p>$&</p>');
-  
-  return html;
-};
