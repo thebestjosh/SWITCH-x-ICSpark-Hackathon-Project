@@ -33,7 +33,21 @@
     "featuredModules": "Featured Learning Modules",
     "viewAllModules": "View All Modules",
     "joinCommunity": "Join Our Community",
-    "communityDesc": "Connect with others, share experiences, and learn together"
+    "communityDesc": "Connect with others, share experiences, and learn together",
+    "features": {
+      "tailoredEducation": "Tailored Health Education",
+      "tailoredEducationDesc": "Learn more about relevant health education tailored for Hawai`i residents.",
+      "interactiveModules": "Interactive Learning Modules",
+      "interactiveModulesDesc": "Engage with easy-to-understand modules on diabetes, heart health, and nutrition.",
+      "communityForum": "Community Forum",
+      "communityForumDesc": "Connect with others. Share experiences, get support from your community.",
+      "resourceDirectory": "Health Resources Directory",
+      "resourceDirectoryDesc": "Find local health services, community programs, and support groups near you.",
+      "educationalContent": "Educational Resources",
+      "educationalContentDesc": "Access educational content about various health topics and conditions.",
+      "trackingTools": "Health Tracking Tools",
+      "trackingToolsDesc": "Monitor your progress with simple tools designed for your health needs."
+    }
   },
   "dashboard": {
     "welcome": "Welcome",

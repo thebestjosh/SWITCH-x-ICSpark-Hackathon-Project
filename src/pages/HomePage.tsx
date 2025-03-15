@@ -187,22 +187,22 @@ const HomePage: React.FC = () => {
             animate={{ opacity: 1, scale: 1 }}
             transition={{ duration: 0.6 }}
           >
-            <h2 className="text-3xl font-display font-bold mb-6">Ready to start your health journey?</h2>
+            <h2 className="text-3xl font-display font-bold mb-6">{t('home.startJourney')}?</h2>
             <p className="text-xl mb-8 max-w-3xl mx-auto">
-              Join our community today and access relevant health resources designed for Hawai`i.
+              {t('home.joinCommunity')}
             </p>
             <div className="flex justify-center">
               {!isAuthenticated && (
                 <Link to="/register">
                   <Button size="lg" style={{ backgroundColor: '#FFFFFF', color: '#50ac54' }} className="hover:bg-gray-100">
-                    Create Free Account
+                    {t('auth.signUp')}
                   </Button>
                 </Link>
               )}
               {isAuthenticated && (
                 <Link to="/dashboard">
                   <Button size="lg" style={{ backgroundColor: 'white', color: '#50ac54' }} className="hover:bg-gray-100">
-                    Go to Dashboard
+                    {t('dashboard.welcome')}
                   </Button>
                 </Link>
               )}

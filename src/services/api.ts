@@ -132,17 +132,28 @@ const learningAPI = {
 // Quiz API
 const quizAPI = {
   submitQuizResult: async (quizResult: any) => {
-    const response = await api.post('/learning/quiz-results', quizResult);
+    // The endpoint was returning 404, let's change to use the modules endpoint
+    const response = await api.post('/learning/modules/quiz-results', quizResult);
+    
+    // Also update the module completion status when quiz is passed
+    if (quizResult.score >= 70 && quizResult.moduleId && quizResult.userId) {
+      try {
+        await learningAPI.markModuleCompleted(quizResult.moduleId, quizResult.userId);
+      } catch (error) {
+        console.error('Error marking module as completed:', error);
+      }
+    }
+    
     return response.data;
   },
   
   getQuizResults: async (userId: string) => {
-    const response = await api.get(`/learning/quiz-results/${userId}`);
+    const response = await api.get(`/learning/modules/quiz-results/user/${userId}`);
     return response.data;
   },
   
   getQuizResultsByModule: async (moduleId: string) => {
-    const response = await api.get(`/learning/quiz-results/module/${moduleId}`);
+    const response = await api.get(`/learning/modules/quiz-results/module/${moduleId}`);
     return response.data;
   }
 };

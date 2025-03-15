@@ -3,6 +3,7 @@ import { useParams, Link, useNavigate } from 'react-router-dom';
 import { motion } from 'framer-motion';
 import { useData } from '../context/DataContext';
 import { useAuth } from '../context/AuthContext';
+import { useTranslation } from '../i18n/TranslationContext';
 import Card from '../components/ui/Card';
 import Button from '../components/ui/Button';
 import Loader from '../components/ui/Loader';
@@ -26,6 +27,7 @@ const QuizPage: React.FC = () => {
   
   const { user } = useAuth();
   const { learningModules, isLoading, saveQuizResult } = useData();
+  const { t } = useTranslation();
   const navigate = useNavigate();
   
   const [module, setModule] = useState<LearningModule | null>(null);
@@ -183,7 +185,7 @@ const QuizPage: React.FC = () => {
           {!quizState.showResults && (
             <div className="flex justify-between items-center mb-2">
               <span className="text-sm text-gray-500">
-                Question {quizState.currentQuestionIndex + 1} of {quiz.questions.length}
+                {t('quiz.title')} {quizState.currentQuestionIndex + 1} {t('quiz.outOf')} {quiz.questions.length}
               </span>
             </div>
           )}
@@ -248,9 +250,9 @@ const QuizPage: React.FC = () => {
             ) : (
               <div>
                 <div className="text-center mb-8">
-                  <h2 className="text-2xl font-bold text-gray-800 mb-2">Quiz Results</h2>
+                  <h2 className="text-2xl font-bold text-gray-800 mb-2">{t('quiz.results')}</h2>
                   <p className="text-gray-600 mb-6">
-                    You answered {quizState.correctAnswers} out of {quiz.questions.length} questions correctly.
+                    {t('quiz.score')}: {quizState.correctAnswers} {t('quiz.outOf')} {quiz.questions.length} {t('quiz.questions')}.
                   </p>
                   
                   <div className="inline-flex items-center justify-center bg-gray-100 rounded-full p-1 mb-4">
@@ -298,7 +300,7 @@ const QuizPage: React.FC = () => {
                 </div>
                 
                 <div className="pt-6 border-t border-gray-200">
-                  <h3 className="text-lg font-bold text-gray-800 mb-4">Review Questions</h3>
+                  <h3 className="text-lg font-bold text-gray-800 mb-4">{t('quiz.questions')}</h3>
                   <div className="space-y-6">
                     {quiz.questions.map((question, index) => (
                       <div key={question.id} className="p-4 border rounded-lg">
@@ -356,7 +358,7 @@ const QuizPage: React.FC = () => {
                         </div>
                         
                         <div className="bg-gray-50 p-3 rounded-lg text-sm">
-                          <p className="font-medium text-gray-700 mb-1">Explanation:</p>
+                          <p className="font-medium text-gray-700 mb-1">{t('quiz.explanation')}:</p>
                           <div className="text-gray-600">
                             <ReactMarkdown>{question.explanation}</ReactMarkdown>
                           </div>
@@ -387,7 +389,7 @@ const QuizPage: React.FC = () => {
                 <svg className="w-5 h-5 mr-1" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 19l-7-7 7-7" />
                 </svg>
-                Previous
+                {t('quiz.previous')}
               </Button>
               
               <Button 
@@ -397,13 +399,13 @@ const QuizPage: React.FC = () => {
               >
                 {quizState.currentQuestionIndex < quiz.questions.length - 1 ? (
                   <>
-                    Next
+                    {t('quiz.next')}
                     <svg className="w-5 h-5 ml-1" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                       <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
                     </svg>
                   </>
                 ) : (
-                  'Submit Quiz'
+                  t('quiz.submit')
                 )}
               </Button>
             </>
@@ -416,14 +418,14 @@ const QuizPage: React.FC = () => {
                 <svg className="w-5 h-5 mr-1" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 4v5h.582m15.356 2A8.001 8.001 0 004.582 9m0 0H9m11 11v-5h-.581m0 0a8.003 8.003 0 01-15.357-2m15.357 2H15" />
                 </svg>
-                Retake Quiz
+                {t('quiz.retake')}
               </Button>
               
               <Button 
                 variant="primary" 
                 onClick={finishQuiz}
               >
-                Complete
+                {t('quiz.finish')}
                 <svg className="w-5 h-5 ml-1" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
                 </svg>

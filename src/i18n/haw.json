@@ -33,7 +33,21 @@
     "featuredModules": "Nā Modula Aʻo Koʻikoʻi",
     "viewAllModules": "Nānā i Nā Modula Āpau",
     "joinCommunity": "E Hui Me Ko Mākou Kaiāulu",
-    "communityDesc": "E hoʻopili me nā poʻe ʻē aʻe, e kaʻana like i nā ʻike, a e aʻo pū"
+    "communityDesc": "E hoʻopili me nā poʻe ʻē aʻe, e kaʻana like i nā ʻike, a e aʻo pū",
+    "features": {
+      "tailoredEducation": "Hoʻonaʻauao Olakino Kūikawā",
+      "tailoredEducationDesc": "E aʻo hou aku i ka ʻike olakino kūikawā no nā kamaʻāina o Hawaiʻi.",
+      "interactiveModules": "Nā Modula Aʻo Hui Pū",
+      "interactiveModulesDesc": "E hoʻopili me nā modula maʻalahi no ka maʻi kōpī piha, ka olakino puʻuwai, a me ka meaʻai.",
+      "communityForum": "Kūkākūkā Kaiāulu",
+      "communityForumDesc": "E hoʻopili me nā poʻe ʻē aʻe. E kaʻana like i nā ʻike, e loaʻa ke kākoʻo mai kou kaiāulu.",
+      "resourceDirectory": "Papa Kumuwaiwai Olakino",
+      "resourceDirectoryDesc": "E huli i nā lawelawe olakino kūloko, nā papa hana kaiāulu, a me nā hui kākoʻo kokoke iā ʻoe.",
+      "educationalContent": "Nā Kumuwaiwai Hoʻonaʻauao",
+      "educationalContentDesc": "E komo i nā ʻike hoʻonaʻauao e pili ana i nā kumuhana olakino like ʻole a me nā kūlana.",
+      "trackingTools": "Nā Mea Hana Nānā Olakino",
+      "trackingToolsDesc": "E nānā i kou holomua me nā mea hana māmā i hana ʻia no kou mau pono olakino."
+    }
   },
   "dashboard": {
     "welcome": "Welina",

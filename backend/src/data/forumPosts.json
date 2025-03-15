@@ -10,7 +10,7 @@
       "skibidi"
     ],
     "createdAt": "2025-03-15T22:31:46.343Z",
-    "updatedAt": "2025-03-15T23:02:26.953Z",
+    "updatedAt": "2025-03-15T23:06:38.157Z",
     "comments": [
       {
         "id": "5ef9c27a-a586-4a20-8bb5-7083f00bd3d7",
@@ -55,6 +55,24 @@
         "authorName": "Kai Stewart",
         "createdAt": "2025-03-15T23:02:26.953Z",
         "updatedAt": "2025-03-15T23:02:26.953Z",
+        "likes": 0
+      },
+      {
+        "id": "eda6b466-75e0-4d4d-95a7-82138185e626",
+        "content": "efafesafes",
+        "authorId": "17b4887c-a158-46e9-9b73-c3a7ae8d4eff",
+        "authorName": "Kai Stewart",
+        "createdAt": "2025-03-15T23:05:39.774Z",
+        "updatedAt": "2025-03-15T23:05:39.774Z",
+        "likes": 0
+      },
+      {
+        "id": "7a103035-7cc1-4be7-8d7b-8e1e7cae1de1",
+        "content": "efasefsa",
+        "authorId": "17b4887c-a158-46e9-9b73-c3a7ae8d4eff",
+        "authorName": "Kai Stewart",
+        "createdAt": "2025-03-15T23:06:38.157Z",
+        "updatedAt": "2025-03-15T23:06:38.157Z",
         "likes": 0
       }
     ],
