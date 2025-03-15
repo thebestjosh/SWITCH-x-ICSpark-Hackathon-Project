@@ -14,7 +14,7 @@ const PrivacyPage: React.FC = () => {
           
           <div className="prose prose-lg max-w-none text-gray-600">
             <p className="mb-4">
-              Last updated: March 15, 2024
+              Last updated: March 15, 2025
             </p>
             
             <h2 className="text-xl font-bold text-gray-800 mt-8 mb-4">Introduction</h2>
@@ -58,7 +58,7 @@ const PrivacyPage: React.FC = () => {
               If you have any questions about this Privacy Policy, please contact us at:
             </p>
             <p className="mb-6">
-              <a href="mailto:info@malamahealth.org" className="text-primary hover:underline">info@malamahealth.org</a>
+              <a href="jzhang27@punahou.edu" className="text-primary hover:underline">jzhang27@punahou.edu</a>
             </p>
           </div>
         </motion.div>
