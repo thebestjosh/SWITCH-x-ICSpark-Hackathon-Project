@@ -1,5 +1,6 @@
 import React, { createContext, useContext, useState, useEffect, ReactNode } from 'react';
 import { User, UserPreferences } from '../types';
+import { authAPI } from '../services/api';
 
 interface AuthContextType {
   user: User | null;
@@ -50,43 +51,31 @@ export const AuthProvider: React.FC<AuthProviderProps> = ({ children }) => {
   const [isLoading, setIsLoading] = useState(true);
 
   useEffect(() => {
-    // Check if user is already logged in from localStorage
-    const storedUser = localStorage.getItem('user');
+    // Check if user is already logged in from authAPI
+    const storedUser = authAPI.getCurrentUser();
     
     if (storedUser) {
-      try {
-        const parsedUser = JSON.parse(storedUser);
-        setUser(parsedUser);
-      } catch (error) {
-        console.error('Failed to parse stored user:', error);
-        localStorage.removeItem('user');
-      }
+      setUser(storedUser);
     }
     
     setIsLoading(false);
   }, []);
 
   const login = async (email: string, password: string): Promise<boolean> => {
-    // This is a mock login functionality for demo purposes
     setIsLoading(true);
     
     try {
-      // Simulate API call
-      await new Promise(resolve => setTimeout(resolve, 1000));
+      // Call backend API
+      const result = await authAPI.login({ email, password });
       
-      // For demo purposes, accept any email/password
-      const loginUser: User = {
-        id: '1', // Use a consistent ID for the demo user
-        username: email.split('@')[0],
-        email: email,
-        name: email.split('@')[0],
-        language: 'en',
-        preferences: defaultPreferences,
-        createdAt: new Date().toISOString(),
-      };
-      setUser(loginUser);
-      localStorage.setItem('user', JSON.stringify(loginUser));
-      return true;
+      if (result.user && result.token) {
+        setUser(result.user);
+        localStorage.setItem('user', JSON.stringify(result.user));
+        localStorage.setItem('token', result.token);
+        return true;
+      }
+      
+      return false;
     } catch (error) {
       console.error('Login error:', error);
       return false;
@@ -101,26 +90,25 @@ export const AuthProvider: React.FC<AuthProviderProps> = ({ children }) => {
     password: string,
     name: string
   ): Promise<boolean> => {
-    // This is a mock registration for demo purposes
     setIsLoading(true);
     
     try {
-      // Simulate API call
-      await new Promise(resolve => setTimeout(resolve, 1000));
-      
-      const newUser: User = {
-        id: Math.random().toString(36).substring(2, 15),
+      // Call backend API
+      const result = await authAPI.register({
         username,
         email,
-        name,
-        language: 'en',
-        preferences: defaultPreferences,
-        createdAt: new Date().toISOString(),
-      };
+        password,
+        name
+      });
       
-      setUser(newUser);
-      localStorage.setItem('user', JSON.stringify(newUser));
-      return true;
+      if (result.user && result.token) {
+        setUser(result.user);
+        localStorage.setItem('user', JSON.stringify(result.user));
+        localStorage.setItem('token', result.token);
+        return true;
+      }
+      
+      return false;
     } catch (error) {
       console.error('Registration error:', error);
       return false;
@@ -131,21 +119,30 @@ export const AuthProvider: React.FC<AuthProviderProps> = ({ children }) => {
 
   const logout = () => {
     setUser(null);
-    localStorage.removeItem('user');
+    authAPI.logout();
   };
 
-  const updatePreferences = (preferences: Partial<UserPreferences>) => {
+  const updatePreferences = async (preferences: Partial<UserPreferences>) => {
     if (user) {
-      const updatedUser = {
-        ...user,
-        preferences: {
-          ...user.preferences,
-          ...preferences,
-        },
-      };
-      
-      setUser(updatedUser);
-      localStorage.setItem('user', JSON.stringify(updatedUser));
+      try {
+        // Call backend API
+        const updatedUserData = await authAPI.updatePreferences(user.id, preferences);
+        
+        if (updatedUserData) {
+          const updatedUser = {
+            ...user,
+            preferences: {
+              ...user.preferences,
+              ...preferences,
+            },
+          };
+          
+          setUser(updatedUser);
+          localStorage.setItem('user', JSON.stringify(updatedUser));
+        }
+      } catch (error) {
+        console.error('Error updating preferences:', error);
+      }
     }
   };
 

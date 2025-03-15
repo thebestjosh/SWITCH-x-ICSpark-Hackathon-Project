@@ -10,7 +10,7 @@ const initializeDataStore = async () => {
     await fs.mkdir(dataDirectory, { recursive: true });
     
     // Initialize files if they don't exist
-    const files = ['users.json', 'forumPosts.json', 'resources.json', 'learningModules.json'];
+    const files = ['users.json', 'forumPosts.json', 'resources.json', 'learningModules.json', 'quizResults.json'];
     
     for (const file of files) {
       const filePath = path.join(dataDirectory, file);
