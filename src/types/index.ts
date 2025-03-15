@@ -59,6 +59,7 @@ export interface Lesson {
   content: string;
   videoUrl?: string;
   imageUrls?: string[];
+  videoEmbeds?: string[]; // Array of iframe HTML for video embeds
 }
 
 // Quiz related types

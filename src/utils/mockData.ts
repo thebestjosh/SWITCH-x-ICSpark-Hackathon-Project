@@ -68,6 +68,10 @@ There are three main types of diabetes:
 
 3. **Gestational Diabetes**: This develops in some women during pregnancy and usually resolves after delivery, but increases risk of type 2 diabetes later.
 
+## Understanding Traditional Hawaiian Approaches to Diabetes Management
+
+This video discusses traditional Hawaiian approaches to managing diabetes, incorporating local foods and cultural practices.
+
 ## Risk Factors in Hawaiian Communities
 
 People of Native Hawaiian, Pacific Islander, and Filipino descent have higher rates of diabetes compared to many other ethnic groups. Some factors that contribute to this include:
@@ -87,7 +91,10 @@ Many cases of type 2 diabetes can be prevented or managed through:
 - Maintaining a healthy weight
 - Regular health check-ups
     `,
-    imageUrls: ['/assets/images/diabetes-infographic.png']
+    imageUrls: ['/assets/images/diabetes-infographic.png'],
+    videoEmbeds: [
+      '<iframe width="560" height="315" src="https://www.youtube.com/embed/Txqe_CAD43c?si=92SsKomckLXXZz5h" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>'
+    ]
   },
   {
     id: 'lesson2',

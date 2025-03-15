@@ -30,4 +30,13 @@
   .input {
     @apply w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-primary focus:border-transparent;
   }
+  
+  .video-container {
+    @apply relative w-full overflow-hidden rounded-lg my-6;
+    padding-bottom: 56.25%; /* 16:9 aspect ratio */
+  }
+  
+  .video-container iframe {
+    @apply absolute top-0 left-0 w-full h-full border-0;
+  }
 }

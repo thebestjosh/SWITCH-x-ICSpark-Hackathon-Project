@@ -131,6 +131,18 @@ const LessonPage: React.FC = () => {
               {lesson.content}
             </ReactMarkdown>
             
+            {/* Video Embeds */}
+            {lesson.videoEmbeds && lesson.videoEmbeds.length > 0 && (
+              <div className="mt-6 space-y-6">
+                {lesson.videoEmbeds.map((embedHtml, index) => (
+                  <div key={index} className="video-container my-6">
+                    <div dangerouslySetInnerHTML={{ __html: embedHtml }} />
+                  </div>
+                ))}
+              </div>
+            )}
+            
+            {/* Images */}
             {lesson.imageUrls && lesson.imageUrls.length > 0 && (
               <div className="mt-6 space-y-4">
                 {lesson.imageUrls.map((imageUrl, index) => (
