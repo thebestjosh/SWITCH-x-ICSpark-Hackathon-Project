@@ -115,6 +115,17 @@ const LearnPage: React.FC = () => {
                 <Link to={`/learn/${module.category}/${module.id}`} className="block h-full">
                   <Card hoverable className="h-full flex flex-col">
                     <div className="mb-4">
+                      <div className="rounded-lg overflow-hidden mb-3 bg-gray-100 h-40 flex items-center justify-center">
+                        <img 
+                          src={require(`../assets/images/modules/${module.category}.svg`).default}
+                          alt={module.title}
+                          className="w-full h-auto object-cover"
+                          onError={(e) => {
+                            // If image fails to load, show a default icon
+                            e.currentTarget.src = require('../assets/images/illustrations/empty-state.svg').default;
+                          }}
+                        />
+                      </div>
                       <span className="inline-block px-3 py-1 text-xs font-medium rounded-full bg-primary-light text-white mb-2">
                         {formatCategory(module.category)}
                       </span>

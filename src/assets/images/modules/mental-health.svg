@@ -1,0 +1,13 @@
+<svg width="400" height="200" xmlns="http://www.w3.org/2000/svg">
+  <rect width="400" height="200" fill="#CE93D8" />
+  <rect width="400" height="40" fill="#9C27B0" />
+  <text x="50%" y="25" font-family="Arial" font-size="16" fill="white" text-anchor="middle" dominant-baseline="middle">Mental Health</text>
+  <circle cx="100" cy="100" r="35" fill="#FFEB3B" />
+  <circle cx="85" cy="90" r="5" fill="#9C27B0" />
+  <circle cx="115" cy="90" r="5" fill="#9C27B0" />
+  <path d="M80,110 Q100,125 120,110" fill="#9C27B0" stroke="#9C27B0" stroke-width="2" fill="none" />
+  <rect x="170" y="70" width="180" height="10" rx="5" fill="white" />
+  <rect x="170" y="90" width="140" height="10" rx="5" fill="white" />
+  <rect x="170" y="110" width="160" height="10" rx="5" fill="white" />
+  <rect x="170" y="130" width="120" height="10" rx="5" fill="white" />
+</svg>

@@ -26,6 +26,11 @@ const Navbar: React.FC = () => {
         <div className="flex justify-between h-16">
           <div className="flex items-center">
             <Link to="/" className="flex-shrink-0 flex items-center" onClick={closeMenu}>
+              <img 
+                src={require('../../assets/images/logo.svg').default} 
+                alt="Mālama Health Logo" 
+                className="h-8 w-auto mr-2" 
+              />
               <span className="text-2xl font-display font-bold text-primary">Mālama Health</span>
             </Link>
           </div>

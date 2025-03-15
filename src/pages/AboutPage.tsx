@@ -7,17 +7,20 @@ const AboutPage: React.FC = () => {
     {
       name: 'Josh Zhang',
       role: 'Coder',
-      bio: 'Sigma coder who made the entire frontend'
+      bio: 'Dedicated to bringing accessible health information to underserved communities in Hawaiʻi.',
+      image: require('../assets/images/team/josh.svg').default
     },
     {
       name: 'Kai Stewart',
       role: 'Coder',
-      bio: 'made functional backend (carried frfr)'
+      bio: 'Focused on developing engaging and accessible user interfaces for health education.',
+      image: require('../assets/images/team/kai.svg').default
     },
     {
       name: 'Julian Williams',
       role: 'Coder',
-      bio: 'Rizzler who also made the front end'
+      bio: 'Specializes in creating interactive learning modules and community forum features.',
+      image: require('../assets/images/team/julian.svg').default
     }
   ];
 
@@ -65,9 +68,18 @@ const AboutPage: React.FC = () => {
                 transition={{ duration: 0.3, delay: 0.2 + (index * 0.1) }}
               >
                 <Card>
-                  <h3 className="text-xl font-bold text-gray-800 mb-1">{member.name}</h3>
-                  <p className="text-primary font-medium mb-3">{member.role}</p>
-                  <p className="text-gray-600">{member.bio}</p>
+                  <div className="flex flex-col sm:flex-row items-center sm:items-start">
+                    <img 
+                      src={member.image} 
+                      alt={member.name} 
+                      className="w-24 h-24 rounded-full mb-4 sm:mb-0 sm:mr-4"
+                    />
+                    <div>
+                      <h3 className="text-xl font-bold text-gray-800 mb-1">{member.name}</h3>
+                      <p className="text-primary font-medium mb-3">{member.role}</p>
+                      <p className="text-gray-600">{member.bio}</p>
+                    </div>
+                  </div>
                 </Card>
               </motion.div>
             ))}
