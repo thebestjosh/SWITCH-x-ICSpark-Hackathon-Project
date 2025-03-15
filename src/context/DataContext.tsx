@@ -286,26 +286,107 @@ export const DataProvider: React.FC<DataProviderProps> = ({ children }) => {
         linkUrl: result.moduleId ? `/learn/${getModuleCategory(result.moduleId)}/${result.moduleId}` : undefined
       };
       
-      setNotifications(prev => [...prev, newNotification]);
+      setNotifications(prev => {
+        const updatedNotifications = [...prev, newNotification];
+        // Save to localStorage
+        localStorage.setItem('notifications', JSON.stringify(updatedNotifications));
+        return updatedNotifications;
+      });
       
-      // If score is passing (>=70%), module completion is handled on the backend
+      // If score is passing (>=70%), module completion is handled in the API layer
       // But we still need to update our local state
       if (result.score >= 70 && result.moduleId) {
-        // Get updated module to refresh the completedBy array
-        const updatedModule = await learningAPI.getModuleById(result.moduleId);
+        try {
+          // Get updated module to refresh the completedBy array
+          const updatedModule = await learningAPI.getModuleById(result.moduleId);
+          
+          // Update local state to reflect the module completion
+          setLearningModules(prevModules => 
+            prevModules.map(module => 
+              module.id === result.moduleId ? updatedModule : module
+            )
+          );
+        } catch (moduleError) {
+          console.error('Error updating module completion state:', moduleError);
+          // Continue even if this part fails - the quiz result was already saved
+        }
+      }
+      
+      // Add this user to the completed users in the module
+      if (result.moduleId && result.userId && result.score >= 70) {
+        const moduleToUpdate = learningModules.find(m => m.id === result.moduleId);
         
-        // Update local state to reflect the module completion
-        setLearningModules(prevModules => 
-          prevModules.map(module => 
-            module.id === result.moduleId ? updatedModule : module
-          )
-        );
+        if (moduleToUpdate) {
+          const isAlreadyCompleted = moduleToUpdate.completedBy?.includes(result.userId);
+          
+          if (!isAlreadyCompleted) {
+            // Update the module locally if not already completed
+            const updatedModule = {
+              ...moduleToUpdate,
+              completedBy: [...(moduleToUpdate.completedBy || []), result.userId]
+            };
+            
+            setLearningModules(prevModules => 
+              prevModules.map(module => 
+                module.id === result.moduleId ? updatedModule : module
+              )
+            );
+          }
+        }
       }
       
       return newResult;
     } catch (error) {
       console.error('Error saving quiz result:', error);
-      throw error;
+      
+      // Create a local fallback result to maintain UX even when server fails
+      const fallbackResult: QuizResult = {
+        id: Date.now().toString(),
+        ...result,
+        completedAt: new Date().toISOString()
+      };
+      
+      // Add to local state
+      setQuizResults(prev => [...prev, fallbackResult]);
+      
+      // Create a notification anyway
+      const newNotification: Notification = {
+        id: Math.random().toString(36).substring(2, 15),
+        userId: result.userId,
+        title: 'Quiz Completed (Saved Locally)',
+        message: `You scored ${result.score}% on your quiz.`,
+        type: 'achievement',
+        read: false,
+        createdAt: new Date().toISOString(),
+        linkUrl: result.moduleId ? `/learn/${getModuleCategory(result.moduleId)}/${result.moduleId}` : undefined
+      };
+      
+      setNotifications(prev => {
+        const updatedNotifications = [...prev, newNotification];
+        // Save to localStorage
+        localStorage.setItem('notifications', JSON.stringify(updatedNotifications));
+        return updatedNotifications;
+      });
+      
+      // Mark module as completed locally
+      if (result.score >= 70 && result.moduleId && result.userId) {
+        const moduleToUpdate = learningModules.find(m => m.id === result.moduleId);
+        
+        if (moduleToUpdate) {
+          const updatedModule = {
+            ...moduleToUpdate,
+            completedBy: [...(moduleToUpdate.completedBy || []), result.userId]
+          };
+          
+          setLearningModules(prevModules => 
+            prevModules.map(module => 
+              module.id === result.moduleId ? updatedModule : module
+            )
+          );
+        }
+      }
+      
+      return fallbackResult;  // Return the fallback so UI can continue
     }
   };
   
