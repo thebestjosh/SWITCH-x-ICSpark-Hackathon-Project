@@ -159,7 +159,7 @@ Remember that traditional Hawaiian lifestyles also included significant physical
 const diabetesModule: LearningModule = {
   id: 'module1',
   title: 'Diabetes Management',
-  description: 'Learn about diabetes prevention and management with a focus on traditional Hawaiian approaches to health and nutrition.',
+  description: 'Learn about diabetes prevention and management with a focus on tradaitional Hawaiian approaches to health and nutrition.',
   category: 'diabetes',
   difficulty: 'beginner',
   estimatedMinutes: 4,
@@ -374,7 +374,7 @@ const nutritionQuiz: Quiz = {
         { id: 'd', text: 'Soda' }
       ],
       correctOptionId: 'b',
-      explanation: 'Avocados contain monounsaturated fats that are hearty and beneficial for overall health.'
+      explanation: 'Avocados contain monounsaturated fats that are heart-healthy and beneficial for overall health.'
     },
     {
       id: 'q3',
