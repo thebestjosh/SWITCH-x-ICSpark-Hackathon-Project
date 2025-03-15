@@ -178,7 +178,7 @@ const ForumPage: React.FC = () => {
                     
                     <div className="flex flex-wrap items-center gap-2 mb-4">
                       <span className="inline-block px-2 py-1 text-xs font-medium rounded-full bg-primary-light text-white">
-                        {formatCategory(post.category)}
+                        {formatCategory(post.category || 'general')}
                       </span>
                       
                       {post.tags && Array.isArray(post.tags) && post.tags.length > 0 && post.tags.slice(0, 3).map((tag, i) => (
@@ -189,33 +189,33 @@ const ForumPage: React.FC = () => {
                     </div>
                     
                     <p className="text-gray-600 mb-4">
-                      {post.content.length > 150 
+                      {post.content && typeof post.content === 'string' && post.content.length > 150 
                         ? post.content.substring(0, 150) + '...' 
-                        : post.content
+                        : post.content || ''
                       }
                     </p>
                     
                     <div className="flex justify-between items-center">
                       <div className="flex items-center text-sm text-gray-500">
                         <span className="mr-4">
-                          By {post.authorName}
+                          By {post.authorName || 'Anonymous'}
                         </span>
                         <span className="flex items-center mr-4">
                           <svg className="h-4 w-4 mr-1" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                             <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M8 12h.01M12 12h.01M16 12h.01M21 12c0 4.418-4.03 8-9 8a9.863 9.863 0 01-4.255-.949L3 20l1.395-3.72C3.512 15.042 3 13.574 3 12c0-4.418 4.03-8 9-8s9 3.582 9 8z" />
                           </svg>
-                          {post.comments.length}
+                          {post.comments && Array.isArray(post.comments) ? post.comments.length : 0}
                         </span>
                         <span className="flex items-center">
                           <svg className="h-4 w-4 mr-1" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                             <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z" />
                           </svg>
-                          {post.likes}
+                          {post.likes || 0}
                         </span>
                       </div>
                       
                       <div className="text-sm text-gray-500">
-                        {post.views} views
+                        {post.views || 0} views
                       </div>
                     </div>
                   </Card>

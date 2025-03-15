@@ -139,8 +139,23 @@ export const DataProvider: React.FC<DataProviderProps> = ({ children }) => {
   
   const addForumPost = async (post: Omit<ForumPost, 'id' | 'createdAt' | 'updatedAt' | 'comments' | 'likes' | 'views'>) => {
     try {
-      const newPost = await forumAPI.createPost(post);
-      setForumPosts(currentPosts => [newPost, ...currentPosts]);
+      // Ensure the post has required properties before sending to API
+      const postWithDefaults = {
+        ...post,
+        tags: Array.isArray(post.tags) ? post.tags : [],
+      };
+      
+      const newPost = await forumAPI.createPost(postWithDefaults);
+      
+      // Ensure the returned post has required properties
+      const safePost = {
+        ...newPost,
+        comments: Array.isArray(newPost.comments) ? newPost.comments : [],
+        likes: newPost.likes || 0,
+        views: newPost.views || 0
+      };
+      
+      setForumPosts(currentPosts => [safePost, ...currentPosts]);
     } catch (error) {
       console.error('Error adding forum post:', error);
     }
@@ -150,9 +165,18 @@ export const DataProvider: React.FC<DataProviderProps> = ({ children }) => {
     try {
       const updatedPost = await forumAPI.addComment(postId, comment);
       
+      // Ensure the returned post has all required properties
+      const safePost = {
+        ...updatedPost,
+        comments: Array.isArray(updatedPost.comments) ? updatedPost.comments : [],
+        likes: updatedPost.likes || 0,
+        views: updatedPost.views || 0,
+        tags: Array.isArray(updatedPost.tags) ? updatedPost.tags : []
+      };
+      
       setForumPosts(currentPosts => 
         currentPosts.map(post => 
-          post.id === postId ? updatedPost : post
+          post.id === postId ? safePost : post
         )
       );
     } catch (error) {
@@ -169,10 +193,19 @@ export const DataProvider: React.FC<DataProviderProps> = ({ children }) => {
     try {
       const updatedPost = await forumAPI.likePost(postId);
       
+      // Ensure the returned post has all required properties
+      const safePost = {
+        ...updatedPost,
+        comments: Array.isArray(updatedPost.comments) ? updatedPost.comments : [],
+        likes: updatedPost.likes || 0,
+        views: updatedPost.views || 0,
+        tags: Array.isArray(updatedPost.tags) ? updatedPost.tags : []
+      };
+      
       // Update forum posts state
       setForumPosts(currentPosts => 
         currentPosts.map(post => 
-          post.id === postId ? updatedPost : post
+          post.id === postId ? safePost : post
         )
       );
       
