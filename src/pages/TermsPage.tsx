@@ -14,7 +14,7 @@ const TermsPage: React.FC = () => {
           
           <div className="prose prose-lg max-w-none text-gray-600">
             <p className="mb-4">
-              Last updated: March 15, 2024
+              Last updated: March 15, 2025
             </p>
             
             <h2 className="text-xl font-bold text-gray-800 mt-8 mb-4">Welcome to Malama Health</h2>
