@@ -58,7 +58,7 @@ const PrivacyPage: React.FC = () => {
               If you have any questions about this Privacy Policy, please contact us at:
             </p>
             <p className="mb-6">
-              <a href="mailto:info@malamahealth.org" className="text-primary hover:underline">info@malamahealth.org</a>
+              <a href="jzhang27@punahou.edu" className="text-primary hover:underline">jzhang27@punahou.edu</a>
             </p>
           </div>
         </motion.div>
